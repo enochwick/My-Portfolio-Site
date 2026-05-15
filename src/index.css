@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body, #root {
+    background: #EAEAEA;
+    color: #0C0C0C;
+    font-family: 'Inter Tight', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    overflow-x: clip;
+  }
+}
+
+/* ── Glowing Shadow Card ── */
+@property --glow-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.glow-container {
+  --card-color: hsl(260deg 100% 3%);
+  --card-radius: 24px;
+  --glow-speed: 4s;
+  --glow-size: 2px;
+  --glow-blur: 14px;
+  --glow-opacity: 0.7;
+
+  position: relative;
+  border-radius: var(--card-radius);
+  padding: var(--glow-size);
+  /* animated conic-gradient border */
+  background: conic-gradient(
+    from var(--glow-angle),
+    #ff0055, #ff6600, #ffcc00, #00ff88, #00aaff, #aa00ff, #ff0055
+  );
+  animation: glow-spin var(--glow-speed) linear infinite;
+  width: 100%;
+  color: white;
+}
+
+/* outer blurred glow halo */
+.glow-container::before {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--glow-blur));
+  border-radius: calc(var(--card-radius) + var(--glow-blur));
+  background: conic-gradient(
+    from var(--glow-angle),
+    #ff0055, #ff6600, #ffcc00, #00ff88, #00aaff, #aa00ff, #ff0055
+  );
+  filter: blur(var(--glow-blur));
+  opacity: var(--glow-opacity);
+  z-index: -1;
+  animation: glow-spin var(--glow-speed) linear infinite;
+}
+
+.glow-content {
+  background: var(--card-color);
+  border-radius: calc(var(--card-radius) - var(--glow-size));
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+/* hover: thicker border + stronger halo */
+.glow-container:hover {
+  --glow-size: 3px;
+  --glow-opacity: 1;
+  --glow-speed: 2.5s;
+}
+
+.glow-container:hover .glow-content {
+  background: hsl(260deg 100% 5%);
+}
+
+@keyframes glow-spin {
+  to { --glow-angle: 360deg; }
+}
+
+@layer utilities {
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee-track-slow {
+    display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+}

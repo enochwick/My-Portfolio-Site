@@ -1,0 +1,117 @@
+{
+  "categories": [
+    "All",
+    "Brand Identity",
+    "Packaging",
+    "Print & 3D Medical",
+    "Digital Design",
+    "AI / Development"
+  ],
+  "projects": [
+    {
+      "title": "Kana Coffee",
+      "subtitle": "Brand Identity",
+      "category": "Brand Identity",
+      "description": "Full brand system — naming, logo, packaging, merch, ecommerce — for an Ethiopian coffee brand.",
+      "tools": ["Illustrator", "Photoshop", "KeyShot", "Brand Strategy"],
+      "featured": true,
+      "images": ["projects/brand-identity/kana-01.jpg", "projects/brand-identity/kana-02.jpg", "projects/brand-identity/kana-03.jpg"]
+    },
+    {
+      "title": "Empyrian Skincare",
+      "subtitle": "Product Packaging",
+      "category": "Packaging",
+      "description": "Natural skincare line — tubes, bottles, boxes — from concept to photorealistic 3D render.",
+      "tools": ["Adobe Dimension", "KeyShot", "Illustrator"],
+      "featured": false,
+      "images": ["projects/packaging/empyrian-01.jpg", "projects/packaging/empyrian-02.jpg"]
+    },
+    {
+      "title": "CTL Amedica",
+      "subtitle": "Print & 3D Medical",
+      "category": "Print & 3D Medical",
+      "description": "Healthcare marketing — booth design, brochures, implant packaging, surgical illustrations for spine implant company.",
+      "tools": ["InDesign", "KeyShot", "ZBrush", "Illustrator", "Photoshop"],
+      "featured": false,
+      "images": ["projects/print-3d/ctl-01.jpg", "projects/print-3d/ctl-02.jpg"]
+    },
+    {
+      "title": "SP Movers",
+      "subtitle": "Brand Identity",
+      "category": "Brand Identity",
+      "description": "Complete rebrand — logo system, vehicle wraps, business cards, color palette — for a DFW moving company.",
+      "tools": ["Illustrator", "Photoshop", "Adobe Dimension"],
+      "featured": false,
+      "images": ["projects/brand-identity/sp-movers-01.jpg", "projects/brand-identity/sp-movers-02.jpg"]
+    },
+    {
+      "title": "RAG Sales Assistant",
+      "subtitle": "AI / Development",
+      "category": "AI / Development",
+      "description": "AI-powered sales chatbot built with React, Supabase pgvector, and Gemini 2.0 for Total Ancillary.",
+      "tools": ["React", "Tailwind", "Supabase", "Gemini API", "pgvector"],
+      "featured": false,
+      "images": ["projects/ai-dev/rag-assistant-01.jpg"]
+    },
+    {
+      "title": "Eshi Utopia",
+      "subtitle": "Digital Design",
+      "category": "Digital Design",
+      "description": "Ecommerce apparel brand — product photography, social media, Shopify storefront, and campaign design.",
+      "tools": ["Shopify", "Photoshop", "Illustrator", "Social Media"],
+      "featured": true,
+      "images": ["projects/digital/eshi-01.jpg", "projects/digital/eshi-02.jpg"]
+    }
+  ],
+  "services": [
+    {
+      "number": "01",
+      "name": "Brand Identity & Strategy",
+      "label": "Brand Defining",
+      "description": "Complete brand systems from naming to style guides — logos, color palettes, typography, and visual language that makes businesses unmistakable.",
+      "tools": ["Illustrator", "Photoshop", "InDesign", "Figma", "Brand Strategy", "Style Guides"]
+    },
+    {
+      "number": "02",
+      "name": "3D Rendering & Visualization",
+      "label": "Detail Driven",
+      "description": "Photorealistic product renders, medical illustrations, and packaging prototypes using KeyShot and ZBrush. From concept to camera-ready.",
+      "tools": ["KeyShot", "ZBrush", "Adobe Dimension", "Blender", "Medical Illustration"]
+    },
+    {
+      "number": "03",
+      "name": "Product & Packaging Design",
+      "label": "Production Ready",
+      "description": "End-to-end packaging for consumer products and regulated medical devices — print-ready, FDA-compliant, shelf-ready.",
+      "tools": ["Illustrator", "InDesign", "KeyShot", "Dieline Design", "Print Production"]
+    },
+    {
+      "number": "04",
+      "name": "Web Design & Development",
+      "label": "Code + Craft",
+      "description": "Modern React sites with dark-mode aesthetics, smooth motion, and responsive layouts. Built to ship, not just look good in Figma.",
+      "tools": ["React", "Tailwind CSS", "Vite", "Vercel", "Framer Motion", "TypeScript"]
+    },
+    {
+      "number": "05",
+      "name": "AI-Powered Products",
+      "label": "AI Forward",
+      "description": "RAG chatbots, AI sales assistants, and intelligent tools built with React, Supabase, and LLM APIs. Design meets engineering.",
+      "tools": ["Supabase", "pgvector", "Gemini API", "React", "RAG Architecture"]
+    },
+    {
+      "number": "06",
+      "name": "Marketing & Print Collateral",
+      "label": "Campaign Driven",
+      "description": "Conference materials, trade show booths, brochures, social media campaigns, and digital ads — designed for healthcare, tech, and DTC brands.",
+      "tools": ["InDesign", "Photoshop", "Premiere Pro", "Social Media", "Event Design"]
+    }
+  ],
+  "experience": [
+    { "years": "2022 – 2025", "role": "Marketing Communications Coordinator", "company": "CTL Amedica" },
+    { "years": "2020 – 2022", "role": "Creative Director & eCommerce Specialist", "company": "Eshi Utopia" },
+    { "years": "2018 – 2020", "role": "Retail Supervisor", "company": "Hudson Group" },
+    { "years": "2018", "role": "Direct Marketing Representative", "company": "Charity Advertising & Marketing Partners" },
+    { "years": "2007 – 2016", "role": "Graphic Designer & IT Support", "company": "Habesha Weekly Advertising" }
+  ]
+}
