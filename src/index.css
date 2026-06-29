@@ -112,3 +112,33 @@
     to   { transform: translateX(-50%); }
   }
 }
+
+/* ── Editorial "Juan Mora"-style layer ── */
+::selection { background: #FFBC95; color: #5a4634; }
+::-moz-selection { background: #FFBC95; color: #5a4634; }
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Hide the native cursor only where the custom one runs (fine pointers) */
+@media (hover: hover) and (pointer: fine) {
+  .jm-cursor-area, .jm-cursor-area * { cursor: none; }
+}
+
+/* Big editorial headline rendering */
+.jm-display {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+/* Reduced motion: disable transforms/animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
