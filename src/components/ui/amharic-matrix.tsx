@@ -63,7 +63,7 @@ export function AmharicMatrix({ className }: { className?: string }) {
       const tileH = rect.height / rows
       const localX = mx - rect.left
       const localY = my - rect.top
-      const radius = Math.min(rect.width, window.innerWidth) / 3.2
+      const radius = Math.min(rect.width, window.innerWidth) / 6.5
       const tiles = grid.children
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
