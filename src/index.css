@@ -122,10 +122,7 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 
-/* Hide the native cursor only where the custom one runs (fine pointers) */
-@media (hover: hover) and (pointer: fine) {
-  .jm-cursor-area, .jm-cursor-area * { cursor: none; }
-}
+/* Native cursor stays visible everywhere */
 
 /* Big editorial headline rendering */
 .jm-display {
@@ -147,6 +144,7 @@ html.lenis, html.lenis body { height: auto; }
 }
 .am-tile {
   --intensity: 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,6 +1,5 @@
 import { NavThemeProvider } from './components/jm/theme'
 import { SmoothScroll } from './components/jm/SmoothScroll'
-import { Cursor } from './components/jm/Cursor'
 import { IntroLoader } from './components/jm/IntroLoader'
 import { Nav } from './components/jm/Nav'
 import { Hero } from './components/jm/Hero'
@@ -15,9 +14,8 @@ export default function SiteJM() {
   return (
     <NavThemeProvider>
       <SmoothScroll />
-      <Cursor />
       <IntroLoader />
-      <div className="jm-cursor-area">
+      <div>
         <Nav />
         <main>
           <Hero />
