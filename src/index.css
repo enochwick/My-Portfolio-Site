@@ -135,6 +135,41 @@ html.lenis, html.lenis body { height: auto; }
   line-height: 0.92;
 }
 
+/* ── Amharic fidäl matrix (hero background) ── */
+.am-tiles {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  width: 100%;
+  height: 100%;
+}
+.am-tile {
+  --intensity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Sans Ethiopic', 'Kefa', serif;
+  font-size: 1.15rem;
+  line-height: 1;
+  user-select: none;
+  /* dim amber baseline, glows toward the cursor (amber #E8862D ≈ hsl(32 82% 54%)) */
+  opacity: calc(0.06 + var(--intensity) * 0.85);
+  color: hsl(32, 100%, calc(46% + var(--intensity) * 34%));
+  text-shadow: 0 0 calc(var(--intensity) * 16px) hsla(32, 100%, 55%, var(--intensity));
+  transform: scale(calc(1 + var(--intensity) * 0.22));
+  transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+.am-glitch {
+  animation: am-glitch 0.22s ease;
+}
+@keyframes am-glitch {
+  0% { transform: scale(1); color: #E8862D; }
+  50% { transform: scale(1.28); color: #fff; text-shadow: 0 0 12px #fff; }
+  100% { transform: scale(1); color: #E8862D; }
+}
+
 /* Reduced motion: disable transforms/animations */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

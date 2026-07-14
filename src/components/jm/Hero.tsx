@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { PERSON } from './content'
 import { Section } from './theme'
+import { AmharicMatrix } from '../ui/amharic-matrix'
 
 const EASE = [0.625, 0.05, 0, 1] as const
 const BASE = 2.1 // start after the intro loader wipes away
@@ -22,20 +23,25 @@ function Line({ children, delay }: { children: React.ReactNode; delay: number })
 
 export function Hero() {
   return (
-    <Section theme="paper" id="top" className="relative">
-      {/* warm top glow */}
-      <div
-        className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-60 blur-[120px]"
-        style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.35), transparent)' }}
-      />
+    <Section theme="dark" id="top" className="relative overflow-hidden">
+      {/* interactive Amharic fidäl matrix */}
+      <AmharicMatrix className="z-0" />
 
-      <div className="relative mx-auto flex min-h-screen max-w-[1400px] flex-col justify-between px-5 pb-10 pt-28 md:px-10">
+      {/* warm amber glow for depth over the black */}
+      <div
+        className="pointer-events-none absolute -top-40 left-1/2 z-0 h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-50 blur-[130px]"
+        style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.4), transparent)' }}
+      />
+      {/* soft vignette so the headline stays legible over the grid */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-between px-5 pb-10 pt-28 md:px-10">
         {/* eyebrow */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: BASE }}
-          className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-ink/50"
+          className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50"
         >
           <span>Portfolio — 2026</span>
           <span>{PERSON.location}</span>
@@ -44,7 +50,10 @@ export function Hero() {
         {/* center: headline + portrait */}
         <div className="grid flex-1 grid-cols-1 items-center gap-10 py-10 md:grid-cols-12">
           <div className="md:col-span-8">
-            <h1 className="jm-display text-[16vw] leading-[0.86] md:text-[10.5vw] lg:text-[9.5vw]">
+            <h1
+              className="jm-display text-[16vw] leading-[0.86] text-paper md:text-[10.5vw] lg:text-[9.5vw]"
+              style={{ textShadow: '0 4px 40px rgba(0,0,0,0.6)' }}
+            >
               <Line delay={BASE + 0.1}>{PERSON.heroLine1}</Line>
               <Line delay={BASE + 0.22}>
                 <span className="text-accent">{PERSON.heroLine2}</span>
@@ -58,13 +67,13 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: EASE, delay: BASE + 0.3 }}
           >
-            <div className="relative mx-auto aspect-[3/4] w-56 overflow-hidden rounded-[20px] bg-grey sm:w-64 md:w-full md:max-w-[340px]">
+            <div className="relative mx-auto aspect-[3/4] w-56 overflow-hidden rounded-[20px] bg-white/5 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] sm:w-64 md:w-full md:max-w-[340px]">
               <img
                 src="/images/portrait.png"
                 alt={`${PERSON.first} ${PERSON.last}`}
                 className="h-full w-full object-cover object-top grayscale-[15%]"
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-ink/10" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-paper/15" />
             </div>
           </motion.div>
         </div>
@@ -76,7 +85,7 @@ export function Hero() {
           transition={{ duration: 0.8, ease: EASE, delay: BASE + 0.5 }}
           className="flex items-end justify-between gap-4"
         >
-          <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/60">
+          <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/60">
             <motion.span
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
@@ -85,7 +94,7 @@ export function Hero() {
             </motion.span>
             Scroll
           </div>
-          <p className="max-w-xs text-right font-sans text-sm leading-snug text-ink/70 sm:text-base">
+          <p className="max-w-xs text-right font-sans text-sm leading-snug text-paper/70 sm:text-base">
             {PERSON.heroBottom}
           </p>
         </motion.div>
