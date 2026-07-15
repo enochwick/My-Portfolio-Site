@@ -10,11 +10,21 @@
   }
 
   html, body, #root {
-    background: #EAEAEA;
-    color: #0C0C0C;
+    background: #0a0a0a;
+    color: #F3EDE6;
     font-family: 'Inter Tight', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* site-wide dark gradient (fixed, so it stays continuous while scrolling) */
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(1100px 620px at 50% -6%, rgba(232, 134, 45, 0.12), transparent 62%),
+      linear-gradient(180deg, #16110b 0%, #0d0c0e 46%, #090909 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
   #root {

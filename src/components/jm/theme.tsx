@@ -18,12 +18,6 @@ export function NavThemeProvider({ children }: { children: React.ReactNode }) {
 
 export const useNavTheme = () => useContext(NavThemeContext)
 
-const BG: Record<NavTheme, string> = {
-  paper: '#F3EDE6',
-  grey: '#EAEAEA',
-  dark: '#0C0C0C',
-}
-
 /**
  * A full-bleed section that re-themes the floating nav when it crosses the
  * top of the viewport (mirrors Juan Mora's data-nav IntersectionObserver).
@@ -63,7 +57,8 @@ export function Section({
       id={id}
       data-nav={theme}
       className={className}
-      style={{ backgroundColor: BG[theme], color: theme === 'dark' ? '#F3EDE6' : '#0C0C0C' }}
+      // transparent so the site-wide dark gradient (on <body>) shows through
+      style={{ backgroundColor: 'transparent', color: '#F3EDE6' }}
     >
       {children}
     </section>
