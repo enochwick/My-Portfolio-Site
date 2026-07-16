@@ -99,13 +99,57 @@ export const SERVICES = [
   },
 ]
 
+// Descriptions in Henok's own portfolio language. `color` drives the stacking
+// cards — a warm progression so each card reads distinctly as it stacks.
 export const PROJECTS = [
-  { title: 'Kana Coffee', category: 'Brand Identity', image: '/images/portfolio/11.png' },
-  { title: 'Empyrian', category: 'Product Packaging', image: '/images/portfolio/4.png' },
-  { title: 'CTL Amedica', category: 'Print & 3D Medical', image: '/images/portfolio/23.jpg' },
-  { title: 'SP Movers', category: 'Brand Re-design', image: '/images/portfolio/31.png' },
-  { title: 'Eshi Utopia', category: 'Digital Design', image: '/images/portfolio/46.png' },
-  { title: 'RAG Sales Assistant', category: 'AI / Development', image: '/images/portfolio/0.jpg' },
+  {
+    title: 'Kana Coffee',
+    category: 'Brand Identity',
+    image: '/images/portfolio/11.png',
+    description:
+      'Brand strategy, brand name, logo design, tag line, identity design and a supporting styleguide for an Ethiopian coffee shop. Coffee with character.',
+    color: '#1A1512',
+  },
+  {
+    title: 'Empyrian',
+    category: 'Product Packaging',
+    image: '/images/portfolio/4.png',
+    description:
+      'Packaging for a natural and organic skincare startup — from concept through to photorealistic 3D renders. Skincare redefined.',
+    color: '#241C16',
+  },
+  {
+    title: 'CTL Amedica',
+    category: 'Print & 3D Medical',
+    image: '/images/portfolio/23.jpg',
+    description:
+      'Implant packaging, surgical guides and print design for a spine implant manufacturer — plus booth ideation at NASS, the biggest spine convention in North America.',
+    color: '#2E241B',
+  },
+  {
+    title: 'SP Movers',
+    category: 'Brand Re-design',
+    image: '/images/portfolio/31.png',
+    description:
+      'Re-branding of a local moving company: primary logo, alternative marks, vehicle wraps, business cards and a full colour and type system.',
+    color: '#382C20',
+  },
+  {
+    title: 'Eshi Utopia',
+    category: 'Digital Design',
+    image: '/images/portfolio/46.png',
+    description:
+      'Social media content creation and copywriting for an ecommerce apparel brand connecting Ethiopian creatives and the diaspora.',
+    color: '#433424',
+  },
+  {
+    title: 'RAG Sales Assistant',
+    category: 'AI / Development',
+    image: '/images/portfolio/0.jpg',
+    description:
+      'An AI-powered sales assistant built with React, Supabase pgvector and Gemini — where design meets engineering, and the work actually ships.',
+    color: '#5A4429',
+  },
 ]
 
 // Value props, grounded in the real story (healthcare + craft + systems + AI).

@@ -1,15 +1,22 @@
-import { motion } from 'framer-motion'
 import { PROJECTS } from './content'
 import { Section } from './theme'
 import { Reveal } from './Reveal'
+import { StackingCards, type StackingCardData } from '../ui/stacking-card'
 
-const EASE = [0.625, 0.05, 0, 1] as const
+const CARDS: StackingCardData[] = PROJECTS.map((p) => ({
+  title: p.title,
+  eyebrow: p.category,
+  description: p.description,
+  image: p.image,
+  color: p.color,
+  href: '#contact',
+}))
 
 export function WorkSection() {
   return (
-    <Section theme="grey" id="work" className="relative overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-5 py-24 md:px-10 md:py-32">
-        <div className="mb-8 flex flex-col items-center text-center">
+    <Section theme="dark" id="work" className="relative">
+      <div className="mx-auto max-w-[1400px] px-5 pt-24 md:px-10 md:pt-32">
+        <div className="flex flex-col items-center text-center">
           <Reveal className="font-sans text-lg text-paper/55">Curious?… Take a look at my</Reveal>
           <Reveal delay={0.05}>
             <h2 className="jm-display text-[26vw] leading-[0.8] tracking-tightest md:text-[18vw]">
@@ -17,35 +24,10 @@ export function WorkSection() {
             </h2>
           </Reveal>
         </div>
-
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((p, i) => (
-            <motion.a
-              key={p.title}
-              href="#contact"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-8% 0px' }}
-              transition={{ duration: 0.7, ease: EASE, delay: (i % 3) * 0.06 }}
-              data-cursor="View"
-              className="group relative block overflow-hidden rounded-3xl bg-white/[0.04] ring-1 ring-white/10"
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={encodeURI(p.image)}
-                  alt={p.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-              </div>
-              <div className="flex items-center justify-between gap-3 px-5 py-4">
-                <span className="font-sans text-lg font-semibold tracking-tight">{p.title}</span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-accent">{p.category}</span>
-              </div>
-            </motion.a>
-          ))}
-        </div>
       </div>
+
+      {/* projects stack as you scroll */}
+      <StackingCards items={CARDS} className="pb-[10vh]" />
     </Section>
   )
 }
