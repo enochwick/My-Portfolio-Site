@@ -1,4 +1,4 @@
-import { useScroll, useTransform, motion } from 'framer-motion'
+import { useScroll, useTransform, motion, type MotionValue } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
 
 export interface TimelineEntry {
@@ -7,9 +7,44 @@ export interface TimelineEntry {
 }
 
 /**
- * Scroll-driven timeline: a gradient line grows as you scroll, with sticky
- * period labels. Adapted from the Aceternity timeline — theme-aware (dark +
- * amber), configurable heading, no next/image dependency.
+ * A single timeline row. Its content is dimmed until the growing line reaches
+ * it — the reveal is driven by the SAME scroll progress as the line, keyed to
+ * this row's measured position (`revealAt`), so they animate in together.
+ */
+function TimelineRow({
+  item,
+  progress,
+  revealAt,
+}: {
+  item: TimelineEntry
+  progress: MotionValue<number>
+  revealAt: number
+}) {
+  const opacity = useTransform(progress, [revealAt - 0.07, revealAt + 0.02], [0.12, 1])
+  const y = useTransform(progress, [revealAt - 0.07, revealAt + 0.02], [28, 0])
+
+  return (
+    <div className="flex justify-start pt-10 md:gap-10 md:pt-40">
+      <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
+        <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#141009] ring-1 ring-white/10 md:left-3">
+          <div className="h-3.5 w-3.5 rounded-full bg-accent shadow-[0_0_12px_rgba(232,134,45,0.7)]" />
+        </div>
+        <motion.div style={{ opacity }} className="hidden md:block md:pl-20">
+          {item.title}
+        </motion.div>
+      </div>
+
+      <motion.div style={{ opacity, y }} className="relative w-full pl-20 pr-4 md:pl-4">
+        <div className="mb-4 block md:hidden">{item.title}</div>
+        {item.content}
+      </motion.div>
+    </div>
+  )
+}
+
+/**
+ * Scroll-driven timeline: a gradient line grows as you scroll, and each entry's
+ * content fades in in sync with the line reaching it. Theme-aware (dark + amber).
  */
 export const Timeline = ({
   data,
@@ -23,10 +58,24 @@ export const Timeline = ({
   const ref = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState(0)
+  // reveal point (in scroll-progress space) per entry — refined once measured
+  const [reveals, setReveals] = useState<number[]>(() => data.map((_, i) => (i + 0.4) / data.length))
 
   useEffect(() => {
-    if (ref.current) {
-      setHeight(ref.current.getBoundingClientRect().height)
+    const el = ref.current
+    if (!el) return
+    const measure = () => {
+      const h = el.getBoundingClientRect().height
+      setHeight(h)
+      const rows = Array.from(el.children).slice(0, data.length) as HTMLElement[]
+      setReveals(rows.map((r) => Math.min(0.99, (r.offsetTop + r.offsetHeight * 0.26) / h)))
+    }
+    measure()
+    window.addEventListener('load', measure)
+    window.addEventListener('resize', measure)
+    return () => {
+      window.removeEventListener('load', measure)
+      window.removeEventListener('resize', measure)
     }
   }, [data])
 
@@ -53,19 +102,12 @@ export const Timeline = ({
 
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
         {data.map((item, index) => (
-          <div key={index} className="flex justify-start pt-10 md:gap-10 md:pt-40">
-            <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
-              <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#141009] ring-1 ring-white/10 md:left-3">
-                <div className="h-3.5 w-3.5 rounded-full bg-accent shadow-[0_0_12px_rgba(232,134,45,0.7)]" />
-              </div>
-              <div className="hidden md:block md:pl-20">{item.title}</div>
-            </div>
-
-            <div className="relative w-full pl-20 pr-4 md:pl-4">
-              <div className="mb-4 block md:hidden">{item.title}</div>
-              {item.content}
-            </div>
-          </div>
+          <TimelineRow
+            key={index}
+            item={item}
+            progress={scrollYProgress}
+            revealAt={reveals[index] ?? (index + 0.4) / data.length}
+          />
         ))}
 
         <div
