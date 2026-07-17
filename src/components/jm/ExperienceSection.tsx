@@ -22,7 +22,27 @@ function Role({ role, company, points }: { role: string; company: string; points
 
 const DATA: TimelineEntry[] = [
   {
-    title: '2021 — Now',
+    title: '2024 — Now',
+    content: (
+      <Role
+        role="Sr. Creative Lead"
+        company="Biovotec LLC & Total Ancillary"
+        points={[
+          'Lead creative, branding, and marketing execution across Total Ancillary and affiliated brands.',
+          'Design product packaging, sales collateral, presentations, digital campaigns, videos, and 3D product visuals.',
+          'Develop and manage company websites, landing pages, product pages, and digital experiences.',
+          'Built a centralized sales-representative portal for collateral ordering, sales resources, and brand-kit requests.',
+          'Developed AI-powered sales assistants and product knowledge tools to support training and product education.',
+          'Created automated workflows connecting website forms, internal databases, CRM processes, and team notifications.',
+          'Translated complex healthcare and product information into clear, visually engaging sales and educational content.',
+          'Established practical AI and automation initiatives to improve marketing, onboarding, and internal workflows.',
+          'Collaborate with leadership, sales, and operations to maintain brand consistency and support company growth.',
+        ]}
+      />
+    ),
+  },
+  {
+    title: '2021 — 2024',
     content: (
       <Role
         role="Marketing Communication Coordinator"
