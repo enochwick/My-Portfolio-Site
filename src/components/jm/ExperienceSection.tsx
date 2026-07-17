@@ -23,7 +23,7 @@ function Role({ role, company, points }: { role: string; company: string; points
 const DATA: TimelineEntry[] = [
   {
     title: '2024 — Now',
-    eyebrow: 'Feb 2024 — Present',
+    eyebrow: 'Feb — Present',
     content: (
       <Role
         role="Sr. Creative Lead"
@@ -44,7 +44,7 @@ const DATA: TimelineEntry[] = [
   },
   {
     title: '2021 — 2024',
-    eyebrow: 'Aug 2021 — Feb 2024',
+    eyebrow: 'Aug — Feb',
     content: (
       <Role
         role="Marketing Communication Coordinator"
@@ -64,7 +64,7 @@ const DATA: TimelineEntry[] = [
   },
   {
     title: '2020 — 2021',
-    eyebrow: 'Sep 2020 — Jul 2021',
+    eyebrow: 'Sep — Jul',
     content: (
       <Role
         role="Graphic Designer and eCommerce Specialist"
@@ -80,7 +80,7 @@ const DATA: TimelineEntry[] = [
   },
   {
     title: '2018 — 2020',
-    eyebrow: 'Jun 2018 — Oct 2020',
+    eyebrow: 'Jun — Oct',
     content: (
       <Role
         role="Retail Marketer"
@@ -95,7 +95,7 @@ const DATA: TimelineEntry[] = [
   },
   {
     title: '2018',
-    eyebrow: 'Jan 2018 — Jun 2018',
+    eyebrow: 'Jan — Jun',
     content: (
       <Role
         role="Direct Marketing Representative"
@@ -110,7 +110,7 @@ const DATA: TimelineEntry[] = [
   },
   {
     title: '2012 — 2016',
-    eyebrow: 'Aug 2012 — Mar 2016',
+    eyebrow: 'Aug — Mar',
     content: (
       <Role
         role="Graphic Designer and IT Support"
