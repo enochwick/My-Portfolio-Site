@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { PERSON } from './content'
 import { Section } from './theme'
 import { AmharicMatrix } from '../ui/amharic-matrix'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const EASE = [0.625, 0.05, 0, 1] as const
 const BASE = 2.1 // start after the intro loader wipes away
@@ -25,6 +26,8 @@ function Word({ children, delay }: { children: React.ReactNode; delay: number })
 }
 
 export function Hero() {
+  const isMobile = useIsMobile()
+
   // drive the sequence off absolute window scroll (px) — robust with Lenis + sticky
   const { scrollY } = useScroll()
   const vh = typeof window !== 'undefined' ? window.innerHeight : 900
@@ -44,6 +47,60 @@ export function Hero() {
   const desO = useTransform(scrollY, [vh * 0.42, vh * 0.72], [0, 1])
   const aiX = useTransform(scrollY, [vh * 0.42, vh * 0.85], [SLIDE * 0.8, 0])
   const aiO = useTransform(scrollY, [vh * 0.42, vh * 0.72], [0, 1])
+
+  // Mobile: static single-screen hero (no 220vh sticky scroll-jack) + native scroll.
+  if (isMobile) {
+    return (
+      <Section theme="dark" id="top" className="relative overflow-hidden">
+        <AmharicMatrix className="z-0" />
+        <div
+          className="pointer-events-none absolute left-1/2 top-1/3 z-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 blur-[120px]"
+          style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.4), transparent)' }}
+        />
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-[1500px] flex-col px-5">
+          <div className="flex items-center justify-between pt-28 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50">
+            <span>Portfolio — 2026</span>
+            <span>{PERSON.location}</span>
+          </div>
+
+          <div className="relative flex flex-1 items-center justify-center py-6">
+            <div className="relative w-full">
+              <h1 className="jm-display relative z-10 text-center text-[19vw] uppercase leading-[0.82] text-paper">
+                <Word delay={BASE + 0.1}>{PERSON.first}</Word>
+              </h1>
+              <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
+                <motion.img
+                  src="/images/portrait.png"
+                  alt={`${PERSON.first} ${PERSON.last}`}
+                  initial={{ opacity: 0, y: 28 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.1, ease: EASE, delay: BASE + 0.35 }}
+                  className="h-[46vh] w-auto max-w-none -translate-y-[3%] select-none object-contain"
+                  style={{
+                    filter: DUOTONE,
+                    WebkitMaskImage: 'linear-gradient(to bottom, #000 86%, transparent 99%)',
+                    maskImage: 'linear-gradient(to bottom, #000 86%, transparent 99%)',
+                  }}
+                />
+              </div>
+              <h1 className="jm-display relative z-30 text-center text-[19vw] uppercase leading-[0.82] text-paper">
+                <Word delay={BASE + 0.22}>{PERSON.last}</Word>
+              </h1>
+            </div>
+          </div>
+
+          <div className="pb-12 text-center">
+            <p className="jm-display text-3xl leading-tight text-paper">
+              {PERSON.heroLine1} <span className="text-accent">{PERSON.heroLine2}</span>
+            </p>
+            <p className="mx-auto mt-3 max-w-xs font-sans text-sm leading-snug text-paper/60">
+              {PERSON.heroBottom}
+            </p>
+          </div>
+        </div>
+      </Section>
+    )
+  }
 
   return (
     <Section theme="dark" id="top" className="relative">

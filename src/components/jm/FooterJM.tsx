@@ -45,10 +45,10 @@ export function FooterJM() {
 
         {/* giant name */}
         <Reveal className="py-10">
-          <div className="flex items-center justify-center gap-4 md:gap-8">
-            <span className="jm-display text-[16vw] leading-none md:text-[12vw]">{PERSON.first}</span>
-            <span className="h-3 w-3 shrink-0 rounded-full bg-accent md:h-5 md:w-5" />
-            <span className="jm-display text-[16vw] leading-none md:text-[12vw]">{PERSON.last}</span>
+          <div className="flex flex-col items-center justify-center gap-3 md:flex-row md:gap-8">
+            <span className="jm-display text-[18vw] uppercase leading-[0.85] md:text-[12vw]">{PERSON.first}</span>
+            <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent md:h-5 md:w-5" />
+            <span className="jm-display text-[18vw] uppercase leading-[0.85] md:text-[12vw]">{PERSON.last}</span>
           </div>
         </Reveal>
 

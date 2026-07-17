@@ -8,6 +8,9 @@ import Lenis from 'lenis'
 export function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    // Skip Lenis on touch devices — native momentum scroll feels better on mobile.
+    // Scroll-driven animations read window.scrollY directly, so they still work.
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
 
     const lenis = new Lenis({
       lerp: 0.1,
