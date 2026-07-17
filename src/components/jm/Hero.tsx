@@ -56,20 +56,22 @@ export function Hero() {
               <Word delay={BASE + 0.1}>{PERSON.first}</Word>
             </h1>
 
-            {/* photo — woven between the two words */}
-            <motion.img
-              src="/images/portrait.png"
-              alt={`${PERSON.first} ${PERSON.last}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.1, ease: EASE, delay: BASE + 0.35 }}
-              className="pointer-events-none absolute left-1/2 top-1/2 z-20 h-[74vh] max-h-[820px] w-auto max-w-[70vw] -translate-x-1/2 -translate-y-1/2 select-none object-contain md:h-[82vh]"
-              style={{
-                filter: DUOTONE,
-                WebkitMaskImage: 'linear-gradient(to bottom, #000 82%, transparent 99%)',
-                maskImage: 'linear-gradient(to bottom, #000 82%, transparent 99%)',
-              }}
-            />
+            {/* photo — woven between the two words (flex wrapper centers it reliably) */}
+            <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
+              <motion.img
+                src="/images/portrait.png"
+                alt={`${PERSON.first} ${PERSON.last}`}
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.1, ease: EASE, delay: BASE + 0.35 }}
+                className="h-[58vh] w-auto max-w-none -translate-y-[3%] select-none object-contain md:h-[64vh]"
+                style={{
+                  filter: DUOTONE,
+                  WebkitMaskImage: 'linear-gradient(to bottom, #000 86%, transparent 99%)',
+                  maskImage: 'linear-gradient(to bottom, #000 86%, transparent 99%)',
+                }}
+              />
+            </div>
 
             {/* TADESSE — in front of the photo */}
             <h1 className="jm-display relative z-30 text-center text-[26vw] uppercase leading-[0.78] text-paper md:text-[17vw]">
