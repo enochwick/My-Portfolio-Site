@@ -20,10 +20,26 @@ function Role({ role, company, points }: { role: string; company: string; points
   )
 }
 
+function Period({ start, end }: { start: [string, string]; end: [string, string] }) {
+  const col = ([m, y]: [string, string]) => (
+    <span className="flex flex-col">
+      <span className="mb-1 h-[13px] font-mono text-[11px] uppercase leading-none tracking-[0.18em] text-accent">
+        {m}
+      </span>
+      <span className="jm-display text-2xl font-bold leading-none text-paper/30 md:text-5xl">{y}</span>
+    </span>
+  )
+  return (
+    <span className="flex items-end gap-6 md:gap-10">
+      {col(start)}
+      {col(end)}
+    </span>
+  )
+}
+
 const DATA: TimelineEntry[] = [
   {
-    title: '2024 — Now',
-    eyebrow: 'Feb — Present',
+    title: <Period start={['Feb', '2024']} end={['', 'Now']} />,
     content: (
       <Role
         role="Sr. Creative Lead"
@@ -43,8 +59,7 @@ const DATA: TimelineEntry[] = [
     ),
   },
   {
-    title: '2021 — 2024',
-    eyebrow: 'Aug — Feb',
+    title: <Period start={['Aug', '2021']} end={['Feb', '2024']} />,
     content: (
       <Role
         role="Marketing Communication Coordinator"
@@ -63,8 +78,7 @@ const DATA: TimelineEntry[] = [
     ),
   },
   {
-    title: '2020 — 2021',
-    eyebrow: 'Sep — Jul',
+    title: <Period start={['Sep', '2020']} end={['Jul', '2021']} />,
     content: (
       <Role
         role="Graphic Designer and eCommerce Specialist"
@@ -79,8 +93,7 @@ const DATA: TimelineEntry[] = [
     ),
   },
   {
-    title: '2018 — 2020',
-    eyebrow: 'Jun — Oct',
+    title: <Period start={['Jun', '2018']} end={['Oct', '2020']} />,
     content: (
       <Role
         role="Retail Marketer"
@@ -94,8 +107,7 @@ const DATA: TimelineEntry[] = [
     ),
   },
   {
-    title: '2018',
-    eyebrow: 'Jan — Jun',
+    title: <Period start={['Jan', '2018']} end={['Jun', '2018']} />,
     content: (
       <Role
         role="Direct Marketing Representative"
@@ -109,8 +121,7 @@ const DATA: TimelineEntry[] = [
     ),
   },
   {
-    title: '2012 — 2016',
-    eyebrow: 'Aug — Mar',
+    title: <Period start={['Aug', '2012']} end={['Mar', '2016']} />,
     content: (
       <Role
         role="Graphic Designer and IT Support"
@@ -124,7 +135,9 @@ const DATA: TimelineEntry[] = [
     ),
   },
   {
-    title: 'Education',
+    title: (
+      <span className="jm-display text-2xl font-bold text-paper/30 md:text-5xl">Education</span>
+    ),
     content: (
       <ul className="space-y-6">
         {[

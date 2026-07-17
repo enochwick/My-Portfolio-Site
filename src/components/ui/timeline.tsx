@@ -2,9 +2,7 @@ import { useScroll, useTransform, motion } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
 
 export interface TimelineEntry {
-  title: string
-  /** small month/period label shown above the big year title */
-  eyebrow?: string
+  title: React.ReactNode
   content: React.ReactNode
 }
 
@@ -60,25 +58,11 @@ export const Timeline = ({
               <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#141009] ring-1 ring-white/10 md:left-3">
                 <div className="h-3.5 w-3.5 rounded-full bg-accent shadow-[0_0_12px_rgba(232,134,45,0.7)]" />
               </div>
-              <div className="hidden md:block md:pl-20">
-                {item.eyebrow && (
-                  <p className="mb-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
-                    {item.eyebrow}
-                  </p>
-                )}
-                <h3 className="jm-display text-xl font-bold text-paper/30 md:text-5xl">{item.title}</h3>
-              </div>
+              <div className="hidden md:block md:pl-20">{item.title}</div>
             </div>
 
             <div className="relative w-full pl-20 pr-4 md:pl-4">
-              <div className="mb-4 block md:hidden">
-                {item.eyebrow && (
-                  <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.16em] text-accent">
-                    {item.eyebrow}
-                  </p>
-                )}
-                <h3 className="jm-display text-left text-2xl font-bold text-paper/40">{item.title}</h3>
-              </div>
+              <div className="mb-4 block md:hidden">{item.title}</div>
               {item.content}
             </div>
           </div>
