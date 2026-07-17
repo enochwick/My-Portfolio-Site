@@ -67,13 +67,24 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: EASE, delay: BASE + 0.3 }}
           >
-            <div className="relative mx-auto aspect-[3/4] w-56 overflow-hidden rounded-[20px] bg-white/5 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] sm:w-64 md:w-full md:max-w-[340px]">
+            <div className="relative mx-auto w-60 sm:w-72 md:w-full md:max-w-[380px]">
+              {/* warm halo so the cutout sits in the scene rather than on top of it */}
+              <div
+                className="pointer-events-none absolute inset-x-0 bottom-[12%] top-[8%] -z-10 blur-[60px]"
+                style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.22), transparent)' }}
+              />
               <img
                 src="/images/portrait.png"
                 alt={`${PERSON.first} ${PERSON.last}`}
-                className="h-full w-full object-cover object-top grayscale-[15%]"
+                className="h-auto w-full select-none object-contain"
+                style={{
+                  // warm duotone to match the amber theme
+                  filter: 'grayscale(1) sepia(0.32) saturate(1.35) brightness(1.02) contrast(1.03)',
+                  // dissolve the bottom into the dark gradient
+                  WebkitMaskImage: 'linear-gradient(to bottom, #000 58%, transparent 97%)',
+                  maskImage: 'linear-gradient(to bottom, #000 58%, transparent 97%)',
+                }}
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-paper/15" />
             </div>
           </motion.div>
         </div>

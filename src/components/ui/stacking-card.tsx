@@ -41,10 +41,10 @@ export function Card({
   const scale = useTransform(progress, range, [1, targetScale])
 
   return (
-    <div ref={container} className="sticky top-0 flex h-screen items-center justify-center px-4">
+    <div ref={container} className="sticky top-0 flex h-screen items-center justify-center px-3 md:px-5">
       <motion.div
         style={{ backgroundColor: color, scale, top: `calc(-5vh + ${i * 26}px)` }}
-        className="relative flex w-full max-w-[1150px] origin-top flex-col overflow-hidden rounded-[28px] p-6 shadow-[0_50px_100px_-30px_rgba(0,0,0,0.85)] ring-1 ring-white/10 md:p-10"
+        className="relative flex w-full origin-top flex-col overflow-hidden rounded-[28px] p-6 shadow-[0_50px_100px_-30px_rgba(0,0,0,0.85)] ring-1 ring-white/10 md:p-12"
       >
         <div className="flex items-baseline justify-between gap-4">
           <h3 className="font-sans text-2xl font-semibold tracking-tight text-paper md:text-3xl">
@@ -83,7 +83,7 @@ export function Card({
             </a>
           </div>
 
-          <div className="relative h-[220px] overflow-hidden rounded-2xl md:h-[300px] md:w-[62%]">
+          <div className="relative h-[220px] overflow-hidden rounded-2xl md:h-[380px] md:w-[62%]">
             <motion.div className="h-full w-full" style={{ scale: imageScale }}>
               <img
                 src={encodeURI(image)}

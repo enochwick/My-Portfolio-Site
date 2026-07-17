@@ -29,11 +29,20 @@ export function Benefits() {
           {/* portrait + real bio */}
           <div>
             <Reveal>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-white/5 ring-1 ring-white/10">
+              <div className="relative mx-auto w-full max-w-[460px]">
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-[12%] top-[8%] -z-10 blur-[70px]"
+                  style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.2), transparent)' }}
+                />
                 <img
                   src="/images/portrait.png"
                   alt="Henok Tadesse"
-                  className="h-full w-full object-cover object-top"
+                  className="h-auto w-full select-none object-contain"
+                  style={{
+                    filter: 'grayscale(1) sepia(0.32) saturate(1.35) brightness(1.02) contrast(1.03)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, #000 62%, transparent 98%)',
+                    maskImage: 'linear-gradient(to bottom, #000 62%, transparent 98%)',
+                  }}
                 />
               </div>
             </Reveal>
