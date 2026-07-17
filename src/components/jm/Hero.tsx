@@ -77,7 +77,7 @@ export function Hero() {
                 {/* HENOK — behind the photo, slides right + fades */}
                 <motion.h1
                   style={{ x: henokX, opacity: henokO }}
-                  className="jm-display relative z-10 text-center text-[26vw] uppercase leading-[0.78] text-paper md:text-[17vw]"
+                  className="jm-display relative z-10 text-center text-[19vw] uppercase leading-[0.82] text-paper md:text-[17vw]"
                 >
                   <Word delay={BASE + 0.1}>{PERSON.first}</Word>
                 </motion.h1>
@@ -93,7 +93,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 28 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.1, ease: EASE, delay: BASE + 0.35 }}
-                    className="h-[58vh] w-auto max-w-none -translate-y-[3%] select-none object-contain md:h-[64vh]"
+                    className="h-[48vh] w-auto max-w-none -translate-y-[3%] select-none object-contain md:h-[64vh]"
                     style={{
                       filter: DUOTONE,
                       WebkitMaskImage: 'linear-gradient(to bottom, #000 86%, transparent 99%)',
@@ -105,7 +105,7 @@ export function Hero() {
                 {/* TADESSE — in front of the photo, slides left + fades */}
                 <motion.h1
                   style={{ x: tadessX, opacity: tadessO }}
-                  className="jm-display relative z-30 text-center text-[26vw] uppercase leading-[0.78] text-paper md:text-[17vw]"
+                  className="jm-display relative z-30 text-center text-[19vw] uppercase leading-[0.82] text-paper md:text-[17vw]"
                 >
                   <Word delay={BASE + 0.22}>{PERSON.last}</Word>
                 </motion.h1>

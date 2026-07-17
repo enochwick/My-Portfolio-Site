@@ -38,7 +38,7 @@ export function BigCTA() {
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-paper/40">
               {copied ? 'Great — email copied' : "Let's talk"}
             </span>
-            <span className="jm-display text-4xl text-paper transition-colors duration-300 group-hover:text-accent sm:text-5xl md:text-6xl">
+            <span className="jm-display break-all text-[8vw] text-paper transition-colors duration-300 group-hover:text-accent sm:text-4xl md:text-6xl">
               {PERSON.email}
             </span>
           </button>
