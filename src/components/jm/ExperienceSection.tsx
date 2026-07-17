@@ -25,13 +25,17 @@ const DATA: TimelineEntry[] = [
     title: '2021 — Now',
     content: (
       <Role
-        role="Marketing Communications Coordinator"
+        role="Marketing Communication Coordinator"
         company="CTL Amedica"
         points={[
-          'Produced surgical technique guides, 3D product renderings, product AR, animations, booth designs, promo videos, and sterilization-tray & packaging designs.',
-          'Ran social, email, and paid/SMS campaigns — driving engagement and online presence.',
-          'Maintained the company website and used Google Analytics to assess performance and visitor insights.',
-          'Leveraged AI tools across marketing to lift brand visibility and engagement.',
+          'Produced digital and print materials, including surgical technique guides, 3D product renderings, product AR, animations, booth designs, promotional videos, sterilization tray designs and product packaging designs.',
+          'Managed social media and email marketing campaigns and paid/SMS ads for targeted outreach.',
+          'Oversaw social media platforms, driving engagement and online presence.',
+          'Oversaw and maintained the company website, ensuring the latest information, and leveraged Google Analytics to assess website performance and visitor insights.',
+          'Developed and executed marketing strategies for medical products and events.',
+          'Demonstrated proficiency in leveraging AI tools and platforms for past marketing and promotional activities, resulting in heightened brand visibility and increased engagement.',
+          'Ensured the accuracy of final print materials through effective communication with printing vendors.',
+          'Overseen and managed a content management platform for the sales team, overseeing its implementation from onboarding to continuous training.',
         ]}
       />
     ),
@@ -40,12 +44,13 @@ const DATA: TimelineEntry[] = [
     title: '2020 — 2021',
     content: (
       <Role
-        role="Graphic Designer & eCommerce Specialist"
+        role="Graphic Designer and eCommerce Specialist"
         company="Eshi Utopia"
         points={[
-          'Created healthcare and brand marketing for social media and built a content calendar.',
-          'Ran all Shopify store operations — orders, inventory, and email marketing.',
-          'Tracked traffic and engagement with Google Analytics and social analytics tools.',
+          'Created and promoted healthcare marketing materials on social media.',
+          'Developed and maintained a content calendar to schedule marketing initiatives.',
+          'Utilized Google Analytics, Shopify, and social media analytics tools to monitor web traffic and user engagement.',
+          'Managed all online store operations, including administrative tasks, order processing, inventory management, and marketing emails.',
         ]}
       />
     ),
@@ -54,11 +59,12 @@ const DATA: TimelineEntry[] = [
     title: '2018 — 2020',
     content: (
       <Role
-        role="Retail Supervisor"
+        role="Retail Marketer"
         company="Hudson Group"
         points={[
-          'Oversaw inventory, transactions, and customer-service operations; kept detailed sales records.',
-          'Optimized product displays and overall brand presentation.',
+          'Overseen inventory management, financial transactions, and customer service operations.',
+          'Maintained comprehensive records of sales data, expenditure, and employee performance evaluations.',
+          'Monitored product inventory levels, optimized product displays, and ensured overall brand presentation.',
         ]}
       />
     ),
@@ -68,10 +74,11 @@ const DATA: TimelineEntry[] = [
     content: (
       <Role
         role="Direct Marketing Representative"
-        company="Charity Advertising & Marketing Partners"
+        company="Charity Advertising and Marketing Partners"
         points={[
-          'Represented the organization at events to promote goals, solicit donations, and seek sponsorships.',
-          'Identified and targeted potential donors through market research and analysis.',
+          'Represented the organization at community events, meetings, and conferences to promote company goals, solicit donations, and seek sponsorships.',
+          "Effectively communicated the organization's mission and vision to potential donors.",
+          'Identify and target potential donors and sponsors through market research and analysis to maximize fundraising efforts.',
         ]}
       />
     ),
@@ -80,11 +87,12 @@ const DATA: TimelineEntry[] = [
     title: '2012 — 2016',
     content: (
       <Role
-        role="Graphic Designer & IT Support"
+        role="Graphic Designer and IT Support"
         company="Habesha Weekly Promotions"
         points={[
-          'Produced engaging digital content and effective print for promotional campaigns.',
-          'Installed and configured systems, providing IT support and security training.',
+          'Produced engaging digital content for websites, social media platforms, and designed effective print materials for promotional campaigns.',
+          'Installed and configured computer systems, providing comprehensive IT support for hardware and software troubleshooting.',
+          'Developed and implemented an inclusive IT security strategy, providing training to ensure compliance and efficient resource utilization.',
         ]}
       />
     ),
