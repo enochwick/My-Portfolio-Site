@@ -2,13 +2,15 @@ import { motion } from 'framer-motion'
 import { BENEFITS, BIO } from './content'
 import { Section } from './theme'
 import { Reveal, WordReveal } from './Reveal'
+import { SpinningCross } from '../ui/ethiopian'
 
 const EASE = [0.625, 0.05, 0, 1] as const
 
 export function Benefits() {
   return (
     <Section theme="paper" id="about" className="relative overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-5 py-24 md:px-10 md:py-36">
+      <SpinningCross className="-right-24 top-10 text-accent/10" size={360} />
+      <div className="relative mx-auto max-w-[1400px] px-5 py-24 md:px-10 md:py-36">
         {/* big stacked statement */}
         <div className="relative mb-20 md:mb-28">
           <h2 className="jm-display text-[12vw] leading-[0.92] md:text-[7vw]">

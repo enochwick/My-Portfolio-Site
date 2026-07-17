@@ -172,6 +172,12 @@ html.lenis, html.lenis body { height: auto; }
 .am-glitch {
   animation: am-glitch 0.22s ease;
 }
+
+/* Ethiopian tibeb weaving band scroll */
+@keyframes tibeb-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 @keyframes am-glitch {
   0% { transform: scale(1); color: #E8862D; }
   50% { transform: scale(1.28); color: #fff; text-shadow: 0 0 12px #fff; }

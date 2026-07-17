@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { PERSON, CTA } from './content'
 import { Section } from './theme'
 import { Reveal, WordReveal } from './Reveal'
+import { SpinningCross } from '../ui/ethiopian'
 
 export function BigCTA() {
   const [copied, setCopied] = useState(false)
@@ -14,8 +15,9 @@ export function BigCTA() {
   }
 
   return (
-    <Section theme="dark" id="contact" className="relative">
-      <div className="mx-auto flex min-h-[80vh] max-w-[1400px] flex-col justify-center px-5 py-28 md:px-10">
+    <Section theme="dark" id="contact" className="relative overflow-hidden">
+      <SpinningCross className="-left-32 top-1/2 -translate-y-1/2 text-accent/[0.07]" size={520} duration={60} reverse />
+      <div className="relative mx-auto flex min-h-[80vh] max-w-[1400px] flex-col justify-center px-5 py-28 md:px-10">
         <h2 className="jm-display max-w-5xl text-[11vw] leading-[0.95] md:text-[6.2vw]">
           <WordReveal text={CTA.headline.split('\n')[0]} />
           <span className="block text-accent">

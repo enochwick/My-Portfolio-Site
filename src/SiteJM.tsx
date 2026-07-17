@@ -9,6 +9,7 @@ import { Benefits } from './components/jm/Benefits'
 import { ExperienceSection } from './components/jm/ExperienceSection'
 import { BigCTA } from './components/jm/BigCTA'
 import { FooterJM } from './components/jm/FooterJM'
+import { TibebBand } from './components/ui/ethiopian'
 
 export default function SiteJM() {
   return (
@@ -20,9 +21,12 @@ export default function SiteJM() {
         <main>
           <Hero />
           <Services />
+          <TibebBand />
           <WorkSection />
+          <TibebBand />
           <Benefits />
           <ExperienceSection />
+          <TibebBand />
           <BigCTA />
           <FooterJM />
         </main>
