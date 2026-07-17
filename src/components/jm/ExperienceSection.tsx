@@ -30,8 +30,9 @@ function Period({ start, end }: { start: [string, string]; end: [string, string]
     </span>
   )
   return (
-    <span className="flex items-end gap-6 md:gap-10">
+    <span className="flex items-end gap-4 md:gap-6">
       {col(start)}
+      <span className="jm-display text-2xl font-bold leading-none text-paper/20 md:text-5xl">—</span>
       {col(end)}
     </span>
   )
