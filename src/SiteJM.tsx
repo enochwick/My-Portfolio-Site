@@ -6,6 +6,7 @@ import { Hero } from './components/jm/Hero'
 import { Services } from './components/jm/Services'
 import { WorkSection } from './components/jm/WorkSection'
 import { Benefits } from './components/jm/Benefits'
+import { ExperienceSection } from './components/jm/ExperienceSection'
 import { BigCTA } from './components/jm/BigCTA'
 import { FooterJM } from './components/jm/FooterJM'
 
@@ -21,6 +22,7 @@ export default function SiteJM() {
           <Services />
           <WorkSection />
           <Benefits />
+          <ExperienceSection />
           <BigCTA />
           <FooterJM />
         </main>
