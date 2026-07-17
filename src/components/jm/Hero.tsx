@@ -79,9 +79,7 @@ export function Hero() {
                   style={{ x: henokX, opacity: henokO }}
                   className="jm-display relative z-10 text-center text-[26vw] uppercase leading-[0.78] text-paper md:text-[17vw]"
                 >
-                  <Word delay={BASE + 0.1}>
-                    <span className="name-pattern">{PERSON.first}</span>
-                  </Word>
+                  <Word delay={BASE + 0.1}>{PERSON.first}</Word>
                 </motion.h1>
 
                 {/* photo — woven between the words, fades away with the name */}
@@ -109,9 +107,7 @@ export function Hero() {
                   style={{ x: tadessX, opacity: tadessO }}
                   className="jm-display relative z-30 text-center text-[26vw] uppercase leading-[0.78] text-paper md:text-[17vw]"
                 >
-                  <Word delay={BASE + 0.22}>
-                    <span className="name-pattern">{PERSON.last}</span>
-                  </Word>
+                  <Word delay={BASE + 0.22}>{PERSON.last}</Word>
                 </motion.h1>
 
                 {/* role — assembles in once the name is gone */}
