@@ -4,7 +4,7 @@ import { Section } from './theme'
 import { AmharicMatrix } from '../ui/amharic-matrix'
 
 const EASE = [0.625, 0.05, 0, 1] as const
-const BASE = 2.1 // start after the intro loader wipes away
+const BASE = 1.1 // start as the intro loader begins wiping away
 
 // warm duotone so the cutout matches the amber theme
 const DUOTONE = 'grayscale(1) sepia(0.34) saturate(1.5) brightness(1.03) contrast(1.08)'
@@ -56,7 +56,7 @@ export function Hero() {
 
           {/* warm amber glow */}
           <div
-            className="pointer-events-none absolute left-1/2 top-1/3 z-0 h-[620px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 blur-[140px]"
+            className="pointer-events-none absolute left-1/2 top-1/3 z-0 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 blur-[70px] md:h-[620px] md:w-[900px] md:blur-[140px]"
             style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.4), transparent)' }}
           />
 

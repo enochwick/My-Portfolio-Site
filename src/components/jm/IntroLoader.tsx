@@ -14,7 +14,7 @@ export function IntroLoader() {
       return
     }
     document.body.style.overflow = 'hidden'
-    const t = setTimeout(() => setDone(true), 2100)
+    const t = setTimeout(() => setDone(true), 1100)
     return () => clearTimeout(t)
   }, [])
 

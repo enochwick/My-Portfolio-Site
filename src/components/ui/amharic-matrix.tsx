@@ -20,6 +20,9 @@ export function AmharicMatrix({ className }: { className?: string }) {
     const grid = gridRef.current
     if (!grid) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    // Skip on phones — it's a mouse-driven decorative grid (no touch interaction),
+    // and ~100 live tiles + the big hero blurs together OOM-crash iOS Safari.
+    if (window.matchMedia('(max-width: 767px)').matches) return
 
     const pick = () => FIDEL[Math.floor(Math.random() * FIDEL.length)]
     let columns = 0

@@ -17,7 +17,7 @@ export function Nav() {
       <motion.header
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, ease: [0.625, 0.05, 0, 1], delay: 2.1 }}
+        transition={{ duration: 0.7, ease: [0.625, 0.05, 0, 1], delay: 1.1 }}
         className="fixed inset-x-0 top-0 z-[120] mix-blend-difference"
         style={{ color: '#F3EDE6' }}
       >
