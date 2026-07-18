@@ -99,8 +99,8 @@ export function Hero() {
                     className="h-[48vh] w-auto max-w-none -translate-y-[3%] select-none object-contain md:h-[64vh]"
                     style={{
                       filter: DUOTONE,
-                      WebkitMaskImage: 'linear-gradient(to bottom, #000 86%, transparent 99%)',
-                      maskImage: 'linear-gradient(to bottom, #000 86%, transparent 99%)',
+                      WebkitMaskImage: 'linear-gradient(to bottom, #000 58%, transparent 84%)',
+                      maskImage: 'linear-gradient(to bottom, #000 58%, transparent 84%)',
                     }}
                   />
                 </motion.div>

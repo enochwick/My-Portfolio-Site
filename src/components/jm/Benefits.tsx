@@ -44,8 +44,8 @@ export function Benefits() {
                   className="h-auto w-full select-none object-contain"
                   style={{
                     filter: 'grayscale(1) sepia(0.32) saturate(1.35) brightness(1.02) contrast(1.03)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, #000 62%, transparent 98%)',
-                    maskImage: 'linear-gradient(to bottom, #000 62%, transparent 98%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, #000 55%, transparent 82%)',
+                    maskImage: 'linear-gradient(to bottom, #000 55%, transparent 82%)',
                   }}
                 />
               </div>
