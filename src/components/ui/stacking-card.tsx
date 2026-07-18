@@ -66,6 +66,7 @@ function CardBody({
               src={encodeURI(image)}
               alt={title}
               loading="lazy"
+              decoding="async"
               className="absolute inset-0 h-full w-full object-cover"
             />
           </motion.div>

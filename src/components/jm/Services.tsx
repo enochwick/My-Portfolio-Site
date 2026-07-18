@@ -40,6 +40,7 @@ function ServiceRow({ images }: { images: string[] }) {
               src={encodeURI(src)}
               alt=""
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </motion.div>

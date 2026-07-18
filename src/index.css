@@ -17,18 +17,37 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* site-wide dark gradient (fixed, so it stays continuous while scrolling) */
+  /* Never allow sideways scroll on any device */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   body {
     min-height: 100vh;
+    background: #0a0a0a;
+  }
+
+  /* site-wide dark gradient — a fixed layer instead of background-attachment:fixed,
+     which is janky/unreliable on iOS Safari and hurts scroll performance. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background:
       radial-gradient(1100px 620px at 50% -6%, rgba(232, 134, 45, 0.12), transparent 62%),
       linear-gradient(180deg, #16110b 0%, #0d0c0e 46%, #090909 100%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
   }
 
   #root {
     overflow-x: clip;
+  }
+
+  /* Media never overflows its container */
+  img, video, canvas {
+    max-width: 100%;
   }
 }
 

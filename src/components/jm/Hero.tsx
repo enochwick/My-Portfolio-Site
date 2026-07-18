@@ -57,7 +57,7 @@ export function Hero() {
           className="pointer-events-none absolute left-1/2 top-1/3 z-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 blur-[120px]"
           style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.4), transparent)' }}
         />
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-[1500px] flex-col px-5">
+        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1500px] flex-col px-5">
           <div className="flex items-center justify-between pt-28 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50">
             <span>Portfolio — 2026</span>
             <span>{PERSON.location}</span>
@@ -70,11 +70,13 @@ export function Hero() {
               </h1>
               <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
                 <motion.img
-                  src="/images/portrait.png"
+                  src="/images/portrait.webp"
                   alt={`${PERSON.first} ${PERSON.last}`}
                   initial={{ opacity: 0, y: 28 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1.1, ease: EASE, delay: BASE + 0.35 }}
+                  fetchPriority="high"
+                  decoding="async"
                   className="h-[46vh] w-auto max-w-none -translate-y-[3%] select-none object-contain"
                   style={{
                     filter: DUOTONE,
@@ -145,11 +147,13 @@ export function Hero() {
                   className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
                 >
                   <motion.img
-                    src="/images/portrait.png"
+                    src="/images/portrait.webp"
                     alt={`${PERSON.first} ${PERSON.last}`}
                     initial={{ opacity: 0, y: 28 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.1, ease: EASE, delay: BASE + 0.35 }}
+                    fetchPriority="high"
+                    decoding="async"
                     className="h-[48vh] w-auto max-w-none -translate-y-[3%] select-none object-contain md:h-[64vh]"
                     style={{
                       filter: DUOTONE,

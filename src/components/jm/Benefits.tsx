@@ -37,8 +37,10 @@ export function Benefits() {
                   style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.2), transparent)' }}
                 />
                 <img
-                  src="/images/portrait.png"
+                  src="/images/portrait.webp"
                   alt="Henok Tadesse"
+                  loading="lazy"
+                  decoding="async"
                   className="h-auto w-full select-none object-contain"
                   style={{
                     filter: 'grayscale(1) sepia(0.32) saturate(1.35) brightness(1.02) contrast(1.03)',

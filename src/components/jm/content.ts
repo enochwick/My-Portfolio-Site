@@ -51,17 +51,17 @@ export const SERVICES = [
     n: '01',
     title: 'Brand Identity',
     copy: 'Brand strategy, naming, logo design, tagline, identity systems and supporting styleguides — like the full identity built for an Ethiopian coffee shop.',
-    images: ['/images/portfolio/11.png', '/images/portfolio/31.png', '/images/portfolio/46.png', '/images/portfolio/8.jpg'],
+    images: ['/images/portfolio/11.webp', '/images/portfolio/31.webp', '/images/portfolio/46.webp', '/images/portfolio/8.webp'],
   },
   {
     n: '02',
     title: 'Product Packaging',
     copy: 'Packaging for consumer products and regulated medical devices — from a natural, organic skincare startup to a spine-implant manufacturer.',
     images: [
-      '/images/portfolio/4.png',
-      '/images/portfolio/top-view-amber-plastic-pump-cosmetic-bottle-mockup-template@2x.jpeg',
-      '/images/portfolio/top-view-elegant-amber-glass-dropper-bottle-and-cosmetic-jar-packaging-mockup-template@2x.jpeg',
-      '/images/portfolio/5.jpg',
+      '/images/portfolio/4.webp',
+      '/images/portfolio/top-view-amber-plastic-pump-cosmetic-bottle-mockup-template@2x.webp',
+      '/images/portfolio/top-view-elegant-amber-glass-dropper-bottle-and-cosmetic-jar-packaging-mockup-template@2x.webp',
+      '/images/portfolio/5.webp',
     ],
   },
   {
@@ -69,10 +69,10 @@ export const SERVICES = [
     title: '3D Rendering & Visualization',
     copy: 'Product and packaging prototypes, medical illustrations, surgical manuals and animations — created in KeyShot 3D Studio and Adobe Dimension.',
     images: [
-      '/images/portfolio/paper-coffee-cups-with-sleeve-and-sugar-packaging-on-the-wooden-surface-mockup-template@2x.jpeg',
-      '/images/portfolio/plural-kraft-paper-stand-up-pouch-bag-mockup-template@2x.jpeg',
-      '/images/portfolio/fabric-tote-bag-and-kraft-paper-envelope-complete-branding-identity-stationery-mockup-template@2x (2).jpeg',
-      '/images/portfolio/front-view-cardboard-paper-mailer-boxes-mockup-template@2x.jpeg',
+      '/images/portfolio/paper-coffee-cups-with-sleeve-and-sugar-packaging-on-the-wooden-surface-mockup-template@2x.webp',
+      '/images/portfolio/plural-kraft-paper-stand-up-pouch-bag-mockup-template@2x.webp',
+      '/images/portfolio/fabric-tote-bag-and-kraft-paper-envelope-complete-branding-identity-stationery-mockup-template@2x (2).webp',
+      '/images/portfolio/front-view-cardboard-paper-mailer-boxes-mockup-template@2x.webp',
     ],
   },
   {
@@ -80,22 +80,22 @@ export const SERVICES = [
     title: 'Print Design',
     copy: 'Brochures, trade-show collateral and event materials — including booth design for a spine-implant maker at NASS, the biggest spine convention in North America.',
     images: [
-      '/images/portfolio/NASS Booth Front Mockup1.png',
-      '/images/portfolio/NASS for SocialMedia@2x@2x.png',
-      '/images/portfolio/Silicon Nitride Teaser for SocialPost.jpg',
+      '/images/portfolio/NASS Booth Front Mockup1.webp',
+      '/images/portfolio/NASS for SocialMedia@2x@2x.webp',
+      '/images/portfolio/Silicon Nitride Teaser for SocialPost.webp',
     ],
   },
   {
     n: '05',
     title: 'Digital Design',
     copy: 'Social-media content creation and copywriting, ecommerce storefronts, and responsive web design that connects brands with their audience.',
-    images: ['/images/portfolio/0.jpg', '/images/portfolio/2.png', '/images/portfolio/7.png'],
+    images: ['/images/portfolio/0.webp', '/images/portfolio/2.webp', '/images/portfolio/7.webp'],
   },
   {
     n: '06',
     title: 'AI-Powered Products',
     copy: 'Production AI tools — RAG portals and sales assistants — built alongside brand and product work, where design meets engineering.',
-    images: ['/images/portfolio/shadow-overlay-flat-lay-multi-device-responsive-mockup-template@2x.jpeg', '/images/portfolio/three-folded-brochure-and-iphone-mockup-template@2x.jpeg', '/images/portfolio/0.jpg'],
+    images: ['/images/portfolio/shadow-overlay-flat-lay-multi-device-responsive-mockup-template@2x.webp', '/images/portfolio/three-folded-brochure-and-iphone-mockup-template@2x.webp', '/images/portfolio/0.webp'],
   },
 ]
 
@@ -105,7 +105,7 @@ export const PROJECTS = [
   {
     title: 'Kana Coffee',
     category: 'Brand Identity',
-    image: '/images/portfolio/11.png',
+    image: '/images/portfolio/11.webp',
     description:
       'Brand strategy, brand name, logo design, tag line, identity design and a supporting styleguide for an Ethiopian coffee shop. Coffee with character.',
     color: '#1A1512',
@@ -113,7 +113,7 @@ export const PROJECTS = [
   {
     title: 'Empyrian',
     category: 'Product Packaging',
-    image: '/images/portfolio/4.png',
+    image: '/images/portfolio/4.webp',
     description:
       'Packaging for a natural and organic skincare startup — from concept through to photorealistic 3D renders. Skincare redefined.',
     color: '#241C16',
@@ -121,7 +121,7 @@ export const PROJECTS = [
   {
     title: 'CTL Amedica',
     category: 'Print & 3D Medical',
-    image: '/images/portfolio/23.jpg',
+    image: '/images/portfolio/23.webp',
     description:
       'Implant packaging, surgical guides and print design for a spine implant manufacturer — plus booth ideation at NASS, the biggest spine convention in North America.',
     color: '#2E241B',
@@ -129,7 +129,7 @@ export const PROJECTS = [
   {
     title: 'SP Movers',
     category: 'Brand Re-design',
-    image: '/images/portfolio/31.png',
+    image: '/images/portfolio/31.webp',
     description:
       'Re-branding of a local moving company: primary logo, alternative marks, vehicle wraps, business cards and a full colour and type system.',
     color: '#382C20',
@@ -137,7 +137,7 @@ export const PROJECTS = [
   {
     title: 'Eshi Utopia',
     category: 'Digital Design',
-    image: '/images/portfolio/46.png',
+    image: '/images/portfolio/46.webp',
     description:
       'Social media content creation and copywriting for an ecommerce apparel brand connecting Ethiopian creatives and the diaspora.',
     color: '#433424',
@@ -145,7 +145,7 @@ export const PROJECTS = [
   {
     title: 'RAG Sales Assistant',
     category: 'AI / Development',
-    image: '/images/portfolio/0.jpg',
+    image: '/images/portfolio/0.webp',
     description:
       'An AI-powered sales assistant built with React, Supabase pgvector and Gemini — where design meets engineering, and the work actually ships.',
     color: '#5A4429',
