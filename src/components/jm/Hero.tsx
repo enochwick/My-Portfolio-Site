@@ -50,7 +50,7 @@ export function Hero() {
     <Section theme="dark" id="top" className="relative">
       {/* tall scroll track drives the sticky hero animation */}
       <div className="relative h-[180vh]">
-        <div className="sticky top-0 h-screen overflow-hidden">
+        <div className="sticky top-0 h-[100svh] overflow-hidden">
           {/* interactive Amharic fidäl matrix */}
           <AmharicMatrix className="z-0" />
 
@@ -60,7 +60,7 @@ export function Hero() {
             style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.4), transparent)' }}
           />
 
-          <div className="relative z-10 mx-auto flex h-screen max-w-[1500px] flex-col px-5 md:px-10">
+          <div className="relative z-10 mx-auto flex h-[100svh] max-w-[1500px] flex-col px-5 md:px-10">
             {/* eyebrow */}
             <motion.div
               initial={{ opacity: 0 }}
