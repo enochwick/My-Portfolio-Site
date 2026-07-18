@@ -54,7 +54,7 @@ export function Services() {
   return (
     <Section theme="dark" id="services" className="relative">
       {/* wider container so the image rows read large */}
-      <div className="mx-auto max-w-[1760px] px-5 py-24 md:px-12 md:py-36">
+      <div className="mx-auto max-w-[1760px] px-5 pb-24 pt-10 md:px-12 md:pb-36 md:pt-16">
         {/* centered section header */}
         <div className="mx-auto mb-20 flex max-w-3xl flex-col items-center text-center md:mb-28">
           <Reveal className="mb-5 inline-flex items-center gap-2 rounded-full border border-paper/20 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-accent">

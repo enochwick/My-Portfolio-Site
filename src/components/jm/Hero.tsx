@@ -31,24 +31,25 @@ export function Hero() {
   const SLIDE = typeof window !== 'undefined' ? Math.max(window.innerWidth * 0.75, 900) : 1100
 
   // Phase 1 — the name splits apart and fades; the photo fades with it.
-  const henokX = useTransform(scrollY, [0, vh * 0.34], [0, SLIDE])
-  const henokO = useTransform(scrollY, [0, vh * 0.3], [1, 0])
-  const tadessX = useTransform(scrollY, [0, vh * 0.34], [0, -SLIDE])
-  const tadessO = useTransform(scrollY, [0, vh * 0.3], [1, 0])
-  const photoO = useTransform(scrollY, [vh * 0.06, vh * 0.38], [1, 0])
-  const photoS = useTransform(scrollY, [vh * 0.06, vh * 0.38], [1, 0.9])
-  const captionO = useTransform(scrollY, [0, vh * 0.26], [1, 0])
+  const henokX = useTransform(scrollY, [0, vh * 0.28], [0, SLIDE])
+  const henokO = useTransform(scrollY, [0, vh * 0.24], [1, 0])
+  const tadessX = useTransform(scrollY, [0, vh * 0.28], [0, -SLIDE])
+  const tadessO = useTransform(scrollY, [0, vh * 0.24], [1, 0])
+  const photoO = useTransform(scrollY, [vh * 0.05, vh * 0.3], [1, 0])
+  const photoS = useTransform(scrollY, [vh * 0.05, vh * 0.3], [1, 0.9])
+  const captionO = useTransform(scrollY, [0, vh * 0.2], [1, 0])
 
-  // Phase 2 — the role assembles in from both sides once the name is gone.
-  const desX = useTransform(scrollY, [vh * 0.42, vh * 0.85], [-SLIDE * 0.8, 0])
-  const desO = useTransform(scrollY, [vh * 0.42, vh * 0.72], [0, 1])
-  const aiX = useTransform(scrollY, [vh * 0.42, vh * 0.85], [SLIDE * 0.8, 0])
-  const aiO = useTransform(scrollY, [vh * 0.42, vh * 0.72], [0, 1])
+  // Phase 2 — the role assembles in from both sides once the name is gone,
+  // finishing early (~0.5vh) so it holds fully-formed for the rest of the pin.
+  const desX = useTransform(scrollY, [vh * 0.32, vh * 0.5], [-SLIDE * 0.8, 0])
+  const desO = useTransform(scrollY, [vh * 0.32, vh * 0.46], [0, 1])
+  const aiX = useTransform(scrollY, [vh * 0.32, vh * 0.5], [SLIDE * 0.8, 0])
+  const aiO = useTransform(scrollY, [vh * 0.32, vh * 0.46], [0, 1])
 
   return (
     <Section theme="dark" id="top" className="relative">
       {/* tall scroll track drives the sticky hero animation */}
-      <div className="relative h-[220vh]">
+      <div className="relative h-[180vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
           {/* interactive Amharic fidäl matrix */}
           <AmharicMatrix className="z-0" />
