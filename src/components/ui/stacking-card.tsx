@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import { useScroll, useTransform, motion, type MotionValue } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { useIsMobile } from '@/lib/useIsMobile'
 
 export interface StackingCardData {
   title: string
@@ -117,28 +116,11 @@ export function StackingCards({
   items: StackingCardData[]
   className?: string
 }) {
-  const isMobile = useIsMobile()
   const container = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start start', 'end end'],
   })
-
-  if (isMobile) {
-    return (
-      <div className={cn('space-y-5 px-3 pb-8', className)}>
-        {items.map((item) => (
-          <div
-            key={item.title}
-            style={{ backgroundColor: item.color }}
-            className="relative overflow-hidden rounded-3xl p-6 ring-1 ring-white/10"
-          >
-            <CardBody {...item} />
-          </div>
-        ))}
-      </div>
-    )
-  }
 
   return (
     <div ref={container} className={cn('relative', className)}>

@@ -34,7 +34,7 @@ function ServiceRow({ images }: { images: string[] }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: EASE, delay: i * 0.05 }}
-            className="relative aspect-square w-[85vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-white/5 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] ring-1 ring-white/5 sm:w-[46vw] md:w-auto md:flex-1"
+            className="relative aspect-square w-[76vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-white/5 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] ring-1 ring-white/5 sm:w-[46vw] md:w-auto md:flex-1"
           >
             <img
               src={encodeURI(src)}
