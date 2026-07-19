@@ -95,7 +95,7 @@ export const SERVICES = [
     n: '06',
     title: 'AI-Powered Products',
     copy: 'Production AI tools — RAG portals and sales assistants — built alongside brand and product work, where design meets engineering.',
-    images: ['/images/portfolio/shadow-overlay-flat-lay-multi-device-responsive-mockup-template@2x.webp', '/images/portfolio/three-folded-brochure-and-iphone-mockup-template@2x.webp'],
+    images: ['/images/portfolio/ai-rag.webp', '/images/portfolio/ai-portal.webp', '/images/portfolio/ai-chat.webp'],
   },
 ]
 
@@ -145,7 +145,7 @@ export const PROJECTS = [
   {
     title: 'RAG Sales Assistant',
     category: 'AI / Development',
-    image: '/images/portfolio/0.webp',
+    image: '/images/portfolio/rag-hero.webp',
     description:
       'An AI-powered sales assistant built with React, Supabase pgvector and Gemini — where design meets engineering, and the work actually ships.',
     color: '#5A4429',
