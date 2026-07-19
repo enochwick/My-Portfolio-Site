@@ -36,7 +36,7 @@ export function BigCTA() {
             className="group inline-flex flex-col items-start gap-2 text-left"
           >
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-paper/40">
-              {copied ? 'Great — email copied' : "Let's talk"}
+              {copied ? 'Great, email copied' : "Let's talk"}
             </span>
             <span className="jm-display break-all text-[8vw] text-paper transition-colors duration-300 group-hover:text-accent sm:text-4xl md:text-6xl">
               {PERSON.email}

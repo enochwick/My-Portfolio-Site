@@ -1,6 +1,6 @@
 // Centralized real content for the editorial portfolio.
 // Copy sourced from Henok's portfolio PDF + resume (authentic voice & projects).
-// Note: "Henok's Blueprint" is a private strategy doc — its private details are
+// Note: "Henok's Blueprint" is a private strategy doc, its private details are
 // intentionally NOT used here; only public-safe positioning language.
 
 export const PERSON = {
@@ -14,17 +14,17 @@ export const PERSON = {
   heroLine1: 'Designer &',
   heroLine2: 'AI Builder',
   heroBottom:
-    'Multi-disciplinary graphic designer & visual artist — crafting brand systems, 3D, and production AI tools.',
+    'Creative Director  |  AI Enthusiast  |  Vibe Coder  |  Transforming Ideas into Compelling Visuals & Digital Experiences',
   yearsExp: '7+ years',
 }
 
 // From the portfolio "Meet Henok" intro (verbatim-ish).
 export const BIO = {
-  lead: "Hi — I'm Henok Tadesse, a multi-disciplinary graphic designer and visual artist working primarily in Adobe Creative Suite and KeyShot 3D Studio.",
+  lead: "Hi, I'm Henok Tadesse, a multi-disciplinary graphic designer and visual artist working primarily in Adobe Creative Suite and KeyShot 3D Studio.",
   body: "I take inspiration from a wide variety of sources, from prog-rock album covers to 20th-century avant-garde art. I'd love to help bring your creative vision to life in a bold and memorable way.",
   // From the resume professional summary.
   summary:
-    'A strong foundation in healthcare marketing and over 7 years crafting impactful work — surgical guides, 3D product renderings, and a diverse range of digital and print design.',
+    'A strong foundation in healthcare marketing and over 7 years crafting impactful work, surgical guides, 3D product renderings, and a diverse range of digital and print design.',
 }
 
 export const SOCIALS = [
@@ -50,13 +50,13 @@ export const SERVICES = [
   {
     n: '01',
     title: 'Brand Identity',
-    copy: 'Brand strategy, naming, logo design, tagline, identity systems and supporting styleguides — like the full identity built for an Ethiopian coffee shop.',
+    copy: 'Brand strategy, naming, logo design, tagline, identity systems and supporting styleguides, like the full identity built for an Ethiopian coffee shop.',
     images: ['/images/portfolio/12.webp', '/images/portfolio/32.webp', '/images/portfolio/8.webp'],
   },
   {
     n: '02',
     title: 'Product Packaging',
-    copy: 'Packaging for consumer products and regulated medical devices — from a natural, organic skincare startup to a spine-implant manufacturer.',
+    copy: 'Packaging for consumer products and regulated medical devices, from a natural, organic skincare startup to a spine-implant manufacturer.',
     images: [
       '/images/portfolio/1.webp',
       '/images/portfolio/top-view-amber-plastic-pump-cosmetic-bottle-mockup-template@2x.webp',
@@ -67,7 +67,7 @@ export const SERVICES = [
   {
     n: '03',
     title: '3D Rendering & Visualization',
-    copy: 'Product and packaging prototypes, medical illustrations, surgical manuals and animations — created in KeyShot 3D Studio and Adobe Dimension.',
+    copy: 'Product and packaging prototypes, medical illustrations, surgical manuals and animations, created in KeyShot 3D Studio and Adobe Dimension.',
     images: [
       '/images/portfolio/paper-coffee-cups-with-sleeve-and-sugar-packaging-on-the-wooden-surface-mockup-template@2x.webp',
       '/images/portfolio/plural-kraft-paper-stand-up-pouch-bag-mockup-template@2x.webp',
@@ -78,7 +78,7 @@ export const SERVICES = [
   {
     n: '04',
     title: 'Print Design',
-    copy: 'Brochures, trade-show collateral and event materials — including booth design for a spine-implant maker at NASS, the biggest spine convention in North America.',
+    copy: 'Brochures, trade-show collateral and event materials, including booth design for a spine-implant maker at NASS, the biggest spine convention in North America.',
     images: [
       '/images/portfolio/NASS Booth Front Mockup1.webp',
       '/images/portfolio/NASS for SocialMedia@2x@2x.webp',
@@ -94,13 +94,13 @@ export const SERVICES = [
   {
     n: '06',
     title: 'AI-Powered Products',
-    copy: 'Production AI tools — RAG portals and sales assistants — built alongside brand and product work, where design meets engineering.',
+    copy: 'Production AI tools, RAG portals and sales assistants, built alongside brand and product work, where design meets engineering.',
     images: ['/images/portfolio/ai-rag.webp', '/images/portfolio/ai-portal.webp', '/images/portfolio/ai-chat.webp'],
   },
 ]
 
 // Descriptions in Henok's own portfolio language. `color` drives the stacking
-// cards — a warm progression so each card reads distinctly as it stacks.
+// cards, a warm progression so each card reads distinctly as it stacks.
 export const PROJECTS = [
   {
     title: 'Kana Coffee',
@@ -115,7 +115,7 @@ export const PROJECTS = [
     category: 'Product Packaging',
     image: '/images/portfolio/4.webp',
     description:
-      'Packaging for a natural and organic skincare startup — from concept through to photorealistic 3D renders. Skincare redefined.',
+      'Packaging for a natural and organic skincare startup, from concept through to photorealistic 3D renders. Skincare redefined.',
     color: '#241C16',
   },
   {
@@ -123,7 +123,7 @@ export const PROJECTS = [
     category: 'Print & 3D Medical',
     image: '/images/portfolio/23.webp',
     description:
-      'Implant packaging, surgical guides and print design for a spine implant manufacturer — plus booth ideation at NASS, the biggest spine convention in North America.',
+      'Implant packaging, surgical guides and print design for a spine implant manufacturer, plus booth ideation at NASS, the biggest spine convention in North America.',
     color: '#2E241B',
   },
   {
@@ -147,23 +147,23 @@ export const PROJECTS = [
     category: 'AI / Development',
     image: '/images/portfolio/rag-hero.webp',
     description:
-      'An AI-powered sales assistant built with React, Supabase pgvector and Gemini — where design meets engineering, and the work actually ships.',
+      'An AI-powered sales assistant built with React, Supabase pgvector and Gemini, where design meets engineering, and the work actually ships.',
     color: '#5A4429',
   },
 ]
 
 // Value props, grounded in the real story (healthcare + craft + systems + AI).
 export const BENEFITS = [
-  'A strong foundation in healthcare marketing — surgical guides, implant packaging, and regulated work done right.',
+  'A strong foundation in healthcare marketing, surgical guides, implant packaging, and regulated work done right.',
   'I care about the craft, from first concept to the final shipped product.',
   'I build scalable brand systems and styleguides that keep brands consistent.',
-  'I merge design with engineering — including production AI tools — so the work actually ships.',
+  'I merge design with engineering, including production AI tools, so the work actually ships.',
 ]
 
 // Closing CTA line, from the portfolio's final page (verbatim).
 export const CTA = {
   headline: "Let's bring your\nidea to life",
-  sub: "If you're looking for a designer to help bring an idea to life — and you're on a tight timeline — let's connect.",
+  sub: "If you're looking for a designer to help bring an idea to life, and you're on a tight timeline, let's connect.",
 }
 
 export const MADE_WITH = ['React', 'Tailwind', 'Framer Motion', 'Lenis', 'Vite', 'Vercel']

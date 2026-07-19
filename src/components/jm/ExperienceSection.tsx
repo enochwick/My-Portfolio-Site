@@ -32,7 +32,7 @@ function Period({ start, end }: { start: [string, string]; end: [string, string]
   return (
     <span className="flex items-end gap-4 md:gap-6">
       {col(start)}
-      <span className="jm-display text-2xl font-bold leading-none text-paper/20 md:text-5xl">—</span>
+      <span className="jm-display text-2xl font-bold leading-none text-paper/20 md:text-5xl">–</span>
       {col(end)}
     </span>
   )
@@ -161,7 +161,7 @@ export function ExperienceSection() {
     <Section theme="dark" id="experience" className="relative">
       <Timeline
         heading={'The journey\nso far'}
-        intro="7+ years across healthcare, ecommerce, and tech — crafting surgical guides, 3D renders, brand systems, and AI tools."
+        intro="7+ years across healthcare, ecommerce, and tech, crafting surgical guides, 3D renders, brand systems, and AI tools."
         data={DATA}
       />
       {/* download résumé */}

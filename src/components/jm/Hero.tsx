@@ -68,7 +68,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: BASE }}
               className="flex items-center justify-between pt-28 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50"
             >
-              <span>Portfolio — 2026</span>
+              <span>Portfolio · 2026</span>
               <span>{PERSON.location}</span>
             </motion.div>
 
