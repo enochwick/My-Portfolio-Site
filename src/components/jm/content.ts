@@ -51,14 +51,14 @@ export const SERVICES = [
     n: '01',
     title: 'Brand Identity',
     copy: 'Brand strategy, naming, logo design, tagline, identity systems and supporting styleguides — like the full identity built for an Ethiopian coffee shop.',
-    images: ['/images/portfolio/11.webp', '/images/portfolio/31.webp', '/images/portfolio/46.webp', '/images/portfolio/8.webp'],
+    images: ['/images/portfolio/12.webp', '/images/portfolio/32.webp', '/images/portfolio/8.webp'],
   },
   {
     n: '02',
     title: 'Product Packaging',
     copy: 'Packaging for consumer products and regulated medical devices — from a natural, organic skincare startup to a spine-implant manufacturer.',
     images: [
-      '/images/portfolio/4.webp',
+      '/images/portfolio/1.webp',
       '/images/portfolio/top-view-amber-plastic-pump-cosmetic-bottle-mockup-template@2x.webp',
       '/images/portfolio/top-view-elegant-amber-glass-dropper-bottle-and-cosmetic-jar-packaging-mockup-template@2x.webp',
       '/images/portfolio/5.webp',
@@ -89,13 +89,13 @@ export const SERVICES = [
     n: '05',
     title: 'Digital Design',
     copy: 'Social-media content creation and copywriting, ecommerce storefronts, and responsive web design that connects brands with their audience.',
-    images: ['/images/portfolio/0.webp', '/images/portfolio/2.webp', '/images/portfolio/7.webp'],
+    images: ['/images/portfolio/47.webp', '/images/portfolio/2.webp', '/images/portfolio/7.webp'],
   },
   {
     n: '06',
     title: 'AI-Powered Products',
     copy: 'Production AI tools — RAG portals and sales assistants — built alongside brand and product work, where design meets engineering.',
-    images: ['/images/portfolio/shadow-overlay-flat-lay-multi-device-responsive-mockup-template@2x.webp', '/images/portfolio/three-folded-brochure-and-iphone-mockup-template@2x.webp', '/images/portfolio/0.webp'],
+    images: ['/images/portfolio/shadow-overlay-flat-lay-multi-device-responsive-mockup-template@2x.webp', '/images/portfolio/three-folded-brochure-and-iphone-mockup-template@2x.webp'],
   },
 ]
 
