@@ -49,12 +49,18 @@ export const STATS = [
 export const SERVICES = [
   {
     n: '01',
+    title: 'AI-Powered Products',
+    copy: 'Production AI tools, RAG portals and sales assistants, built alongside brand and product work, where design meets engineering.',
+    images: ['/images/portfolio/ai-rag.webp', '/images/portfolio/ai-portal.webp', '/images/portfolio/ai-chat.webp'],
+  },
+  {
+    n: '02',
     title: 'Brand Identity',
     copy: 'Brand strategy, naming, logo design, tagline, identity systems and supporting styleguides, like the full identity built for an Ethiopian coffee shop.',
     images: ['/images/portfolio/12.webp', '/images/portfolio/32.webp', '/images/portfolio/8.webp'],
   },
   {
-    n: '02',
+    n: '03',
     title: 'Product Packaging',
     copy: 'Packaging for consumer products and regulated medical devices, from a natural, organic skincare startup to a spine-implant manufacturer.',
     images: [
@@ -65,7 +71,7 @@ export const SERVICES = [
     ],
   },
   {
-    n: '03',
+    n: '04',
     title: '3D Rendering & Visualization',
     copy: 'Product and packaging prototypes, medical illustrations, surgical manuals and animations, created in KeyShot 3D Studio and Adobe Dimension.',
     images: [
@@ -76,7 +82,7 @@ export const SERVICES = [
     ],
   },
   {
-    n: '04',
+    n: '05',
     title: 'Print Design',
     copy: 'Brochures, trade-show collateral and event materials, including booth design for a spine-implant maker at NASS, the biggest spine convention in North America.',
     images: [
@@ -86,16 +92,10 @@ export const SERVICES = [
     ],
   },
   {
-    n: '05',
+    n: '06',
     title: 'Digital Design',
     copy: 'Social-media content creation and copywriting, ecommerce storefronts, and responsive web design that connects brands with their audience.',
     images: ['/images/portfolio/47.webp', '/images/portfolio/2.webp', '/images/portfolio/7.webp'],
-  },
-  {
-    n: '06',
-    title: 'AI-Powered Products',
-    copy: 'Production AI tools, RAG portals and sales assistants, built alongside brand and product work, where design meets engineering.',
-    images: ['/images/portfolio/ai-rag.webp', '/images/portfolio/ai-portal.webp', '/images/portfolio/ai-chat.webp'],
   },
 ]
 
