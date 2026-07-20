@@ -85,7 +85,7 @@ export function IntroLoader() {
               {!swap && (
                 <motion.span
                   key="wave"
-                  className="ml-[0.3em] inline-block"
+                  className="pl-[0.3em] inline-block"
                   initial={enter}
                   animate={shown}
                   exit={leave}
