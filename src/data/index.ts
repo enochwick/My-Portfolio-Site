@@ -1,6 +1,14 @@
 export const services = [
   {
     number: '01',
+    label: 'AI Forward',
+    name: 'AI-Powered Products',
+    description: 'RAG chatbots, AI sales assistants, and intelligent tools built with React, Supabase, and LLM APIs. Design meets engineering.',
+    tools: ['Supabase', 'pgvector', 'Gemini API', 'React', 'RAG Architecture'],
+    image: '/images/portfolio/0.jpg',
+  },
+  {
+    number: '02',
     label: 'Brand Defining',
     name: 'Brand Identity & Strategy',
     description: 'Complete brand systems from naming to style guides: logos, color palettes, typography, and visual language that makes businesses unmistakable.',
@@ -8,7 +16,7 @@ export const services = [
     image: '/images/portfolio/11.png',
   },
   {
-    number: '02',
+    number: '03',
     label: 'Detail Driven',
     name: '3D Rendering & Visualization',
     description: 'Photorealistic product renders, medical illustrations, and packaging prototypes using KeyShot and ZBrush. From concept to camera-ready.',
@@ -16,7 +24,7 @@ export const services = [
     image: '/images/portfolio/4.png',
   },
   {
-    number: '03',
+    number: '04',
     label: 'Production Ready',
     name: 'Product & Packaging Design',
     description: 'End-to-end packaging for consumer products and regulated medical devices: print-ready, FDA-compliant, shelf-ready.',
@@ -24,20 +32,12 @@ export const services = [
     image: '/images/portfolio/paper-coffee-cups-with-sleeve-and-sugar-packaging-on-the-wooden-surface-mockup-template@2x.jpeg',
   },
   {
-    number: '04',
+    number: '05',
     label: 'Code + Craft',
     name: 'Web Design & Development',
     description: 'Modern React sites with clean aesthetics, smooth motion, and responsive layouts. Built to ship, not just look good in Figma.',
     tools: ['React', 'Tailwind CSS', 'Vite', 'Vercel', 'Framer Motion', 'TypeScript'],
     image: '/images/portfolio/shadow-overlay-flat-lay-multi-device-responsive-mockup-template@2x.jpeg',
-  },
-  {
-    number: '05',
-    label: 'AI Forward',
-    name: 'AI-Powered Products',
-    description: 'RAG chatbots, AI sales assistants, and intelligent tools built with React, Supabase, and LLM APIs. Design meets engineering.',
-    tools: ['Supabase', 'pgvector', 'Gemini API', 'React', 'RAG Architecture'],
-    image: '/images/portfolio/0.jpg',
   },
   {
     number: '06',
