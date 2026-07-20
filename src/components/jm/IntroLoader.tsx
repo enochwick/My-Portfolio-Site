@@ -31,9 +31,9 @@ export function IntroLoader() {
     }
     document.body.style.overflow = 'hidden'
     const timers = [
-      setTimeout(() => setPhase(1), 800), // NOK appears  → HEYNOK
-      setTimeout(() => setPhase(2), 1650), // Y collapses  → HENOK
-      setTimeout(() => setDone(true), 2450), // wipe up to the site
+      setTimeout(() => setPhase(1), 1250), // NOK appears  → HEYNOK
+      setTimeout(() => setPhase(2), 2650), // Y collapses  → HENOK
+      setTimeout(() => setDone(true), 3700), // wipe up to the site
     ]
     return () => timers.forEach(clearTimeout)
   }, [])
@@ -51,16 +51,16 @@ export function IntroLoader() {
         <motion.div
           className="fixed inset-0 z-[300] flex items-center justify-center bg-accent text-ink"
           exit={{ y: '-100%' }}
-          transition={{ duration: 0.9, ease: EASE }}
+          transition={{ duration: 1.15, ease: EASE }}
         >
-          <div className="jm-display flex items-end justify-center text-6xl leading-none sm:text-8xl md:text-9xl">
+          <div className="jm-display flex items-end justify-center text-5xl uppercase leading-[0.82] tracking-[-0.02em] sm:text-7xl md:text-8xl">
             {/* HE — slides up on mount */}
             <span className="inline-block overflow-hidden align-bottom">
               <motion.span
                 className="inline-block"
                 initial={{ y: '115%' }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
+                transition={{ duration: 1.1, ease: EASE, delay: 0.25 }}
               >
                 HE
               </motion.span>
@@ -70,14 +70,14 @@ export function IntroLoader() {
             <motion.span
               className="inline-block overflow-hidden align-bottom"
               animate={{ width: yGone ? 0 : yw || 'auto' }}
-              transition={{ duration: 0.55, ease: EASE }}
+              transition={{ duration: 0.8, ease: EASE }}
             >
               <motion.span
                 ref={yRef}
                 className="inline-block"
                 initial={{ y: '115%' }}
                 animate={{ y: yGone ? '115%' : 0 }}
-                transition={{ duration: 0.6, ease: EASE, delay: yGone ? 0 : 0.22 }}
+                transition={{ duration: 0.95, ease: EASE, delay: yGone ? 0 : 0.45 }}
               >
                 Y
               </motion.span>
@@ -88,14 +88,14 @@ export function IntroLoader() {
               className="inline-block overflow-hidden align-bottom"
               initial={{ width: 0 }}
               animate={{ width: nokIn ? nw || 'auto' : 0 }}
-              transition={{ duration: 0.55, ease: EASE }}
+              transition={{ duration: 0.8, ease: EASE }}
             >
               <motion.span
                 ref={nRef}
                 className="inline-block"
                 initial={{ y: '115%' }}
                 animate={{ y: nokIn ? 0 : '115%' }}
-                transition={{ duration: 0.6, ease: EASE }}
+                transition={{ duration: 0.9, ease: EASE }}
               >
                 NOK
               </motion.span>

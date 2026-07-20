@@ -163,7 +163,7 @@ export const BENEFITS = [
 // Closing CTA line.
 export const CTA = {
   headline: "Let's bring your\nidea to life",
-  sub: "If you need a creative partner to shape your brand, product, and AI-powered experiences — and actually ship them on time — let's connect.",
+  sub: "If you need a creative partner to shape your brand, product, and AI-powered experiences, and actually ship them on time, let's connect.",
 }
 
 export const MADE_WITH = ['React', 'Tailwind', 'Framer Motion', 'Lenis', 'Vite', 'Vercel']
