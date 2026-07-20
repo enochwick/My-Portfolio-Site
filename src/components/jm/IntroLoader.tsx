@@ -7,18 +7,8 @@ const EASE = [0.625, 0.05, 0, 1] as const
 // so glyphs and the emoji are never clipped at any point in the animation.
 const enter = { opacity: 0, y: '-55%' }
 const shown = { opacity: 1, y: 0 }
-const leave = { opacity: 0, y: '55%', transition: { duration: 0.9, ease: EASE } }
-// y leaves the same way, but stays fully visible while it slides — the fade
-// holds, then happens near the end of the drop rather than immediately.
-const leaveY = {
-  opacity: 0,
-  y: '95%',
-  transition: {
-    y: { duration: 1.1, ease: EASE },
-    opacity: { duration: 0.4, ease: EASE, delay: 0.6 },
-  },
-}
-const LAYOUT = { duration: 0.9, ease: EASE }
+const leave = { opacity: 0, y: '55%', transition: { duration: 0.6, ease: EASE } }
+const LAYOUT = { duration: 0.6, ease: EASE }
 
 /**
  * Name-intro wordplay (only the H is capital):
@@ -38,9 +28,9 @@ export function IntroLoader() {
     }
     document.body.style.overflow = 'hidden'
     const timers = [
-      setTimeout(() => setPhase(1), 2100), // 👋 out, nok in
-      setTimeout(() => setPhase(2), 3900), // y out → Henok
-      setTimeout(() => setDone(true), 5200), // wipe up to the site
+      setTimeout(() => setPhase(1), 1500), // 👋 out, nok in
+      setTimeout(() => setPhase(2), 2800), // y out → Henok
+      setTimeout(() => setDone(true), 3800), // wipe up to the site
     ]
     return () => timers.forEach(clearTimeout)
   }, [])
@@ -58,7 +48,7 @@ export function IntroLoader() {
         <motion.div
           className="fixed inset-0 z-[300] flex items-center justify-center bg-accent px-6 text-ink"
           exit={{ y: '-100%' }}
-          transition={{ duration: 1.3, ease: EASE }}
+          transition={{ duration: 1, ease: EASE }}
         >
           <div className="jm-display flex max-w-full items-baseline justify-center text-[13vw] leading-[1.1] tracking-normal sm:text-7xl md:text-8xl">
             <AnimatePresence mode="popLayout">
@@ -69,7 +59,7 @@ export function IntroLoader() {
                 className="inline-block"
                 initial={enter}
                 animate={shown}
-                transition={{ duration: 1, ease: EASE, delay: 0.25, layout: LAYOUT }}
+                transition={{ duration: 0.7, ease: EASE, delay: 0.15, layout: LAYOUT }}
               >
                 He
               </motion.span>
@@ -82,8 +72,8 @@ export function IntroLoader() {
                   className="inline-block"
                   initial={enter}
                   animate={shown}
-                  exit={leaveY}
-                  transition={{ duration: 1, ease: EASE, delay: 0.4, layout: LAYOUT }}
+                  exit={leave}
+                  transition={{ duration: 0.7, ease: EASE, delay: 0.28, layout: LAYOUT }}
                 >
                   y
                 </motion.span>
@@ -99,12 +89,12 @@ export function IntroLoader() {
                   initial={enter}
                   animate={shown}
                   exit={leave}
-                  transition={{ duration: 1, ease: EASE, delay: 0.55 }}
+                  transition={{ duration: 0.7, ease: EASE, delay: 0.4 }}
                 >
                   <motion.span
                     className="inline-block origin-[60%_85%]"
                     animate={{ rotate: [0, 18, -6, 16, -4, 12, 0] }}
-                    transition={{ duration: 1.6, ease: 'easeInOut', delay: 1.1 }}
+                    transition={{ duration: 1.2, ease: 'easeInOut', delay: 0.75 }}
                   >
                     👋
                   </motion.span>
@@ -120,7 +110,7 @@ export function IntroLoader() {
                   initial={enter}
                   animate={shown}
                   exit={leave}
-                  transition={{ duration: 1.1, ease: EASE, delay: 0.1, layout: LAYOUT }}
+                  transition={{ duration: 0.75, ease: EASE, delay: 0.05, layout: LAYOUT }}
                 >
                   nok
                 </motion.span>
