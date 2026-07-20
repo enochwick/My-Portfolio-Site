@@ -82,7 +82,7 @@ const DATA: TimelineEntry[] = [
     title: <Period start={['Sep', '2020']} end={['Jul', '2021']} />,
     content: (
       <Role
-        role="Graphic Designer and eCommerce Specialist"
+        role="Creative Director and eCommerce Specialist"
         company="Eshi Utopia"
         points={[
           'Created and promoted healthcare marketing materials on social media.',
