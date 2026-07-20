@@ -49,7 +49,17 @@ export function WordReveal({
   const lines = text.split('\n')
   let i = 0
   return (
-    <span className={className} aria-label={text.replace(/\n/g, ' ')}>
+    // whileInView lives on the (un-clipped) parent — observing an individual
+    // word would deadlock, since each word starts translated 110% outside its
+    // own overflow-hidden mask and IntersectionObserver reads it as never in
+    // view. The parent drives the words via variants instead.
+    <motion.span
+      className={className}
+      aria-label={text.replace(/\n/g, ' ')}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
+    >
       {lines.map((line, li) => (
         <span key={li} className="block">
           {line.split(' ').map((word, wi) => {
@@ -62,9 +72,7 @@ export function WordReveal({
               >
                 <motion.span
                   className="inline-block"
-                  initial={{ y: '110%' }}
-                  whileInView={{ y: 0 }}
-                  viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
+                  variants={{ hidden: { y: '110%' }, visible: { y: 0 } }}
                   transition={{ duration: 0.7, ease: EASE, delay: delay + idx * stagger }}
                 >
                   {word}
@@ -75,6 +83,6 @@ export function WordReveal({
           })}
         </span>
       ))}
-    </span>
+    </motion.span>
   )
 }
