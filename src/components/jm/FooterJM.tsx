@@ -31,14 +31,6 @@ export function FooterJM() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href={`tel:${PERSON.phone.replace(/\s/g, '')}`}
-                  className="font-sans text-sm text-paper/70 transition-colors hover:text-accent"
-                >
-                  {PERSON.phone}
-                </a>
-              </li>
             </ul>
           </div>
         </div>

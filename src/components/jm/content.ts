@@ -160,10 +160,10 @@ export const BENEFITS = [
   'I merge design with engineering, including production AI tools, so the work actually ships.',
 ]
 
-// Closing CTA line, from the portfolio's final page (verbatim).
+// Closing CTA line.
 export const CTA = {
   headline: "Let's bring your\nidea to life",
-  sub: "If you're looking for a designer to help bring an idea to life, and you're on a tight timeline, let's connect.",
+  sub: "If you need a creative partner to shape your brand, product, and AI-powered experiences — and actually ship them on time — let's connect.",
 }
 
 export const MADE_WITH = ['React', 'Tailwind', 'Framer Motion', 'Lenis', 'Vite', 'Vercel']
