@@ -191,6 +191,10 @@ html.lenis, html.lenis body { height: auto; }
   color: rgba(12, 12, 12, calc(0.12 + var(--intensity) * 0.3));
   text-shadow: none;
 }
+/* On the orange cover, flicker to a darker burnt orange instead of a white flash. */
+.am-faded .am-glitch {
+  animation: am-glitch-faded 0.22s ease;
+}
 
 /* Ethiopian tibeb weaving band scroll */
 @keyframes tibeb-scroll {
@@ -202,6 +206,12 @@ html.lenis, html.lenis body { height: auto; }
   0% { transform: scale(1); color: #E8862D; }
   50% { transform: scale(1.28); color: #fff; text-shadow: 0 0 12px #fff; }
   100% { transform: scale(1); color: #E8862D; }
+}
+
+@keyframes am-glitch-faded {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.22); color: #9A4E14; }
+  100% { transform: scale(1); }
 }
 
 /* Reduced motion: disable transforms/animations */
