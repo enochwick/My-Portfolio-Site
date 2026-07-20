@@ -67,12 +67,14 @@ export function WordReveal({
             return (
               <span
                 key={wi}
-                className="inline-block overflow-hidden align-bottom"
+                // pb + matching -mb gives descenders / round glyph bottoms (e.g.
+                // the "G") room inside the overflow mask without changing layout.
+                className="inline-block overflow-hidden align-bottom pb-[0.16em] -mb-[0.16em]"
                 aria-hidden
               >
                 <motion.span
                   className="inline-block"
-                  variants={{ hidden: { y: '110%' }, visible: { y: 0 } }}
+                  variants={{ hidden: { y: '128%' }, visible: { y: 0 } }}
                   transition={{ duration: 0.7, ease: EASE, delay: delay + idx * stagger }}
                 >
                   {word}

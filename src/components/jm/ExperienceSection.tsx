@@ -122,20 +122,6 @@ const DATA: TimelineEntry[] = [
     ),
   },
   {
-    title: <Period start={['Aug', '2012']} end={['Mar', '2016']} />,
-    content: (
-      <Role
-        role="Graphic Designer and IT Support"
-        company="Habesha Weekly Promotions"
-        points={[
-          'Produced engaging digital content for websites, social media platforms, and designed effective print materials for promotional campaigns.',
-          'Installed and configured computer systems, providing comprehensive IT support for hardware and software troubleshooting.',
-          'Developed and implemented an inclusive IT security strategy, providing training to ensure compliance and efficient resource utilization.',
-        ]}
-      />
-    ),
-  },
-  {
     title: (
       <span className="jm-display text-2xl font-bold text-paper/30 md:text-5xl">Education</span>
     ),
