@@ -143,7 +143,7 @@ export function Hero() {
                 >
                   ↓
                 </motion.span>
-                Scroll
+                <span className="hidden sm:inline">Scroll</span>
               </div>
               <p className="max-w-xs text-right font-sans text-sm leading-snug text-paper/70 sm:text-base">
                 {PERSON.heroBottom}
