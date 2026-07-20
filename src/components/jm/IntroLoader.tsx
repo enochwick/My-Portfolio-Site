@@ -8,6 +8,16 @@ const EASE = [0.625, 0.05, 0, 1] as const
 const enter = { opacity: 0, y: '-55%' }
 const shown = { opacity: 1, y: 0 }
 const leave = { opacity: 0, y: '55%', transition: { duration: 0.9, ease: EASE } }
+// y leaves the same way, but stays fully visible while it slides — the fade
+// holds, then happens near the end of the drop rather than immediately.
+const leaveY = {
+  opacity: 0,
+  y: '95%',
+  transition: {
+    y: { duration: 1.1, ease: EASE },
+    opacity: { duration: 0.4, ease: EASE, delay: 0.6 },
+  },
+}
 const LAYOUT = { duration: 0.9, ease: EASE }
 
 /**
@@ -72,23 +82,24 @@ export function IntroLoader() {
                   className="inline-block"
                   initial={enter}
                   animate={shown}
-                  exit={leave}
+                  exit={leaveY}
                   transition={{ duration: 1, ease: EASE, delay: 0.4, layout: LAYOUT }}
                 >
                   y
                 </motion.span>
               )}
 
-              {/* 👋 wave — greets, then fades + slides down out */}
+              {/* 👋 wave — greets, then fades + slides straight down out.
+                  No `layout` here: layout would animate its horizontal recenter
+                  during exit, making it drift sideways instead of straight down. */}
               {!swap && (
                 <motion.span
                   key="wave"
-                  layout="position"
                   className="ml-[0.3em] inline-block"
                   initial={enter}
                   animate={shown}
                   exit={leave}
-                  transition={{ duration: 1, ease: EASE, delay: 0.55, layout: LAYOUT }}
+                  transition={{ duration: 1, ease: EASE, delay: 0.55 }}
                 >
                   <motion.span
                     className="inline-block origin-[60%_85%]"
