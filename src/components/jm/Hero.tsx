@@ -48,8 +48,9 @@ export function Hero() {
 
   return (
     <Section theme="dark" id="top" className="relative">
-      {/* tall scroll track drives the sticky hero animation */}
-      <div className="relative h-[180vh]">
+      {/* tall scroll track drives the sticky hero animation; shorter on mobile
+          so less dead space sits between the hero and the next section */}
+      <div className="relative h-[160vh] md:h-[180vh]">
         <div className="sticky top-0 h-[100svh] overflow-hidden">
           {/* interactive Amharic fidäl matrix */}
           <AmharicMatrix className="z-0" />
