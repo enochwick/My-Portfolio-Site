@@ -10,7 +10,7 @@ const EASE = [0.625, 0.05, 0, 1] as const
  * A wide, centered row of large images that lies tilted back and "stands up"
  * into a flat row as it scrolls into view.
  */
-function ServiceRow({ images }: { images: string[] }) {
+function ServiceRow({ images, spin = false }: { images: string[]; spin?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -33,8 +33,18 @@ function ServiceRow({ images }: { images: string[] }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: EASE, delay: i * 0.05 }}
-            className="relative aspect-square w-[76vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-white/5 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] ring-1 ring-white/5 sm:w-[46vw] md:w-auto md:flex-1"
+            // 3D service: gentle continuous turntable rotation + float, staggered
+            animate={spin ? { rotateY: [-6, 6, -6], y: [0, -12, 0] } : undefined}
+            transition={
+              spin
+                ? {
+                    opacity: { duration: 0.6, ease: EASE, delay: i * 0.05 },
+                    rotateY: { duration: 7, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 },
+                    y: { duration: 5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 },
+                  }
+                : { duration: 0.6, ease: EASE, delay: i * 0.05 }
+            }
+            className="relative aspect-square w-[76vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-white/5 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] ring-1 ring-white/5 [transform-style:preserve-3d] sm:w-[46vw] md:w-auto md:flex-1"
           >
             <img
               src={encodeURI(src)}
@@ -81,7 +91,7 @@ export function Services() {
                 </Reveal>
               </div>
 
-              <ServiceRow images={s.images} />
+              <ServiceRow images={s.images} spin={s.title.startsWith('3D Rendering')} />
             </div>
           ))}
         </div>
