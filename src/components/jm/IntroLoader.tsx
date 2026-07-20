@@ -19,9 +19,16 @@ export function IntroLoader() {
   const nRef = useRef<HTMLSpanElement>(null)
   const [yw, setYw] = useState(0)
   const [nw, setNw] = useState(0)
-  useLayoutEffect(() => {
+  const measure = () => {
     if (yRef.current) setYw(yRef.current.offsetWidth)
     if (nRef.current) setNw(nRef.current.offsetWidth)
+  }
+  useLayoutEffect(() => {
+    measure()
+    // Re-measure once the web font swaps in (fonts load with display=swap, so the
+    // first paint may use a wider fallback) to keep the letter masks accurate.
+    document.fonts?.ready.then(measure)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -49,11 +56,11 @@ export function IntroLoader() {
     <AnimatePresence>
       {!done && (
         <motion.div
-          className="fixed inset-0 z-[300] flex items-center justify-center bg-accent text-ink"
+          className="fixed inset-0 z-[300] flex items-center justify-center bg-accent px-6 text-ink"
           exit={{ y: '-100%' }}
           transition={{ duration: 1.15, ease: EASE }}
         >
-          <div className="jm-display flex items-end justify-center text-5xl uppercase leading-[0.82] tracking-[-0.02em] sm:text-7xl md:text-8xl">
+          <div className="jm-display flex max-w-full items-end justify-center text-[13vw] uppercase leading-[0.82] tracking-[-0.02em] sm:text-7xl md:text-8xl">
             {/* HE — slides up on mount */}
             <span className="inline-block overflow-hidden align-bottom">
               <motion.span
