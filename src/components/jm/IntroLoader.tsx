@@ -3,20 +3,23 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 const EASE = [0.625, 0.05, 0, 1] as const
 
+// Generous vertical room inside the overflow masks so slides don't clip glyphs —
+// especially the lowercase "y" descender. Cancelled by matching negative margins
+// so layout/baseline stay put.
+const MASK = 'inline-block overflow-hidden align-bottom pt-[0.1em] -mt-[0.1em] pb-[0.26em] -mb-[0.26em]'
+
 /**
- * Name-intro wordplay:
- *   phase 0  "HEY 👋"   — HE + Y appear with a waving hand
- *   phase 1  "HEY"      — the wave fades away
- *   phase 2  "HEYNOK"   — NOK slides in
- *   phase 3  "HENOK"    — the Y collapses away
+ * Name-intro wordplay (only the H is capital):
+ *   phase 0  "Hey 👋"   — He + y rise with a waving hand
+ *   phase 1  "Heynok"   — the 👋 fades + slides down as "nok" fades in + slides down in its place
+ *   phase 2  "Henok"    — the y collapses away
  * then the panel wipes up to reveal the site.
  */
 export function IntroLoader() {
   const [phase, setPhase] = useState(0)
   const [done, setDone] = useState(false)
 
-  // Measure natural widths so the letter masks can open/collapse without gaps.
-  // A small buffer keeps the last glyph (Y / K) from clipping against the mask edge.
+  // Measure natural widths so the letter masks open/collapse without gaps.
   const yRef = useRef<HTMLSpanElement>(null)
   const nRef = useRef<HTMLSpanElement>(null)
   const eRef = useRef<HTMLSpanElement>(null)
@@ -33,8 +36,8 @@ export function IntroLoader() {
   }
   useLayoutEffect(() => {
     measure()
-    // Re-measure once the web font swaps in (fonts load with display=swap, so the
-    // first paint may use a wider fallback) to keep the masks accurate.
+    // Re-measure once the web font swaps in (display=swap → first paint may be a
+    // wider fallback) so the masks stay accurate.
     document.fonts?.ready.then(measure)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -46,10 +49,9 @@ export function IntroLoader() {
     }
     document.body.style.overflow = 'hidden'
     const timers = [
-      setTimeout(() => setPhase(1), 1350), // wave fades away
-      setTimeout(() => setPhase(2), 1800), // NOK appears  → HEYNOK
-      setTimeout(() => setPhase(3), 3150), // Y collapses  → HENOK
-      setTimeout(() => setDone(true), 4200), // wipe up to the site
+      setTimeout(() => setPhase(1), 2100), // 👋 slides down out, nok slides down in
+      setTimeout(() => setPhase(2), 3900), // y collapses  → Henok
+      setTimeout(() => setDone(true), 5200), // wipe up to the site
     ]
     return () => timers.forEach(clearTimeout)
   }, [])
@@ -58,9 +60,8 @@ export function IntroLoader() {
     if (done) document.body.style.overflow = ''
   }, [done])
 
-  const waveGone = phase >= 1
-  const nokIn = phase >= 2
-  const yGone = phase >= 3
+  const swap = phase >= 1 // 👋 out, nok in
+  const yGone = phase >= 2
 
   return (
     <AnimatePresence>
@@ -68,59 +69,59 @@ export function IntroLoader() {
         <motion.div
           className="fixed inset-0 z-[300] flex items-center justify-center bg-accent px-6 text-ink"
           exit={{ y: '-100%' }}
-          transition={{ duration: 1.15, ease: EASE }}
+          transition={{ duration: 1.3, ease: EASE }}
         >
-          <div className="jm-display flex max-w-full items-end justify-center text-[13vw] uppercase leading-[1.15] tracking-normal sm:text-7xl md:text-8xl">
-            {/* HE — slides up on mount */}
-            <span className="inline-block overflow-hidden align-bottom">
+          <div className="jm-display flex max-w-full items-end justify-center text-[13vw] leading-[1.1] tracking-normal sm:text-7xl md:text-8xl">
+            {/* He — slides up on mount */}
+            <span className={MASK}>
               <motion.span
                 className="inline-block"
-                initial={{ y: '120%' }}
+                initial={{ y: '150%' }}
                 animate={{ y: 0 }}
-                transition={{ duration: 1.1, ease: EASE, delay: 0.25 }}
+                transition={{ duration: 1.3, ease: EASE, delay: 0.35 }}
               >
-                HE
+                He
               </motion.span>
             </span>
 
-            {/* Y — present from the start, then collapses away */}
+            {/* y — present from the start, then collapses away → Henok */}
             <motion.span
-              className="inline-block overflow-hidden align-bottom"
+              className={MASK}
               animate={{ width: yGone ? 0 : yw || 'auto' }}
-              transition={{ duration: 0.8, ease: EASE }}
+              transition={{ duration: 1, ease: EASE }}
             >
               <motion.span
                 ref={yRef}
                 className="inline-block"
-                initial={{ y: '120%' }}
-                animate={{ y: yGone ? '120%' : 0 }}
-                transition={{ duration: 0.95, ease: EASE, delay: yGone ? 0 : 0.45 }}
+                initial={{ y: '150%' }}
+                animate={{ y: yGone ? '150%' : 0, opacity: yGone ? 0 : 1 }}
+                transition={{ duration: yGone ? 0.9 : 1.3, ease: EASE, delay: yGone ? 0 : 0.5 }}
               >
-                Y
+                y
               </motion.span>
             </motion.span>
 
-            {/* 👋 wave — greets, then fades + collapses before NOK arrives */}
+            {/* 👋 wave — greets, then fades + slides DOWN out */}
             <motion.span
-              className="inline-block overflow-hidden align-bottom"
-              animate={{ width: waveGone ? 0 : ew || 'auto' }}
-              transition={{ duration: 0.55, ease: EASE }}
+              className={MASK}
+              animate={{ width: swap ? 0 : ew || 'auto' }}
+              transition={{ duration: 0.9, ease: EASE }}
             >
               <motion.span
                 ref={eRef}
                 className="ml-[0.3em] inline-block origin-[60%_85%]"
-                initial={{ y: '120%', opacity: 1 }}
+                initial={{ y: '150%', opacity: 1 }}
                 animate={
-                  waveGone
-                    ? { y: 0, opacity: 0 }
+                  swap
+                    ? { y: '150%', opacity: 0 }
                     : { y: 0, rotate: [0, 18, -6, 16, -4, 12, 0] }
                 }
                 transition={
-                  waveGone
-                    ? { duration: 0.4, ease: EASE }
+                  swap
+                    ? { duration: 0.9, ease: EASE }
                     : {
-                        y: { duration: 0.9, ease: EASE, delay: 0.35 },
-                        rotate: { duration: 1.3, ease: 'easeInOut', delay: 0.9 },
+                        y: { duration: 1.2, ease: EASE, delay: 0.6 },
+                        rotate: { duration: 1.6, ease: 'easeInOut', delay: 1.3 },
                       }
                 }
               >
@@ -128,21 +129,21 @@ export function IntroLoader() {
               </motion.span>
             </motion.span>
 
-            {/* NOK — expands in beside HEY */}
+            {/* nok — fades in + slides DOWN into the 👋's place */}
             <motion.span
-              className="inline-block overflow-hidden align-bottom"
+              className={MASK}
               initial={{ width: 0 }}
-              animate={{ width: nokIn ? nw || 'auto' : 0 }}
-              transition={{ duration: 0.8, ease: EASE }}
+              animate={{ width: swap ? nw || 'auto' : 0 }}
+              transition={{ duration: 0.9, ease: EASE }}
             >
               <motion.span
                 ref={nRef}
                 className="inline-block"
-                initial={{ y: '120%' }}
-                animate={{ y: nokIn ? 0 : '120%' }}
-                transition={{ duration: 0.9, ease: EASE }}
+                initial={{ y: '-150%', opacity: 0 }}
+                animate={{ y: swap ? 0 : '-150%', opacity: swap ? 1 : 0 }}
+                transition={{ duration: 1.1, ease: EASE, delay: swap ? 0.15 : 0 }}
               >
-                NOK
+                nok
               </motion.span>
             </motion.span>
           </div>
