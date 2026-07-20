@@ -79,7 +79,7 @@ const DATA: TimelineEntry[] = [
     ),
   },
   {
-    title: <Period start={['Sep', '2020']} end={['Jul', '2021']} />,
+    title: <Period start={['Sep', '2020']} end={['', 'Present']} />,
     content: (
       <Role
         role="Creative Director and eCommerce Specialist"
