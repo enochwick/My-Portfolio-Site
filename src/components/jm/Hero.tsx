@@ -81,11 +81,11 @@ export function Hero() {
 
             {/* name + photo intertwine → role swap */}
             <div className="relative flex flex-1 items-center justify-center py-6">
-              <div className="relative w-full">
+              <div className="relative mx-auto w-full max-w-[1200px]">
                 {/* HENOK — behind the photo, slides right + fades */}
                 <motion.h1
                   style={{ x: henokX, opacity: henokO }}
-                  className="jm-display relative z-10 text-center text-[19vw] uppercase leading-[0.82] text-paper md:text-[17vw]"
+                  className="jm-display relative z-10 text-center text-[15vw] uppercase leading-[0.82] text-paper md:text-[13vw]"
                 >
                   <Word text={PERSON.first} delay={BASE + 0.1} />
                 </motion.h1>
@@ -115,7 +115,7 @@ export function Hero() {
                 {/* TADESSE — in front of the photo, slides left + fades */}
                 <motion.h1
                   style={{ x: tadessX, opacity: tadessO }}
-                  className="jm-display relative z-30 text-center text-[19vw] uppercase leading-[0.82] text-paper md:text-[17vw]"
+                  className="jm-display relative z-30 text-center text-[15vw] uppercase leading-[0.82] text-paper md:text-[13vw]"
                 >
                   <Word text={PERSON.last} delay={BASE + 0.22} />
                 </motion.h1>
