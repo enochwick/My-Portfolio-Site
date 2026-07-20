@@ -13,7 +13,7 @@ const FIDEL =
  * read per frame, not one per tile), updates are rAF-throttled, and the whole
  * effect pauses when scrolled out of view.
  */
-export function AmharicMatrix({ className }: { className?: string }) {
+export function AmharicMatrix({ className, auto = false }: { className?: string; auto?: boolean }) {
   const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -117,6 +117,26 @@ export function AmharicMatrix({ className }: { className?: string }) {
     window.addEventListener('touchstart', onTouch, { passive: true })
     window.addEventListener('resize', buildGrid)
 
+    // Auto mode: gently flicker a few random tiles to new fidäl so the grid
+    // animates on its own (used behind the intro loader, where there's no
+    // pointer to drive the glow).
+    let flicker = 0
+    if (auto) {
+      flicker = window.setInterval(() => {
+        if (!visible) return
+        const tiles = grid.children
+        const n = tiles.length
+        if (!n) return
+        for (let k = 0; k < 3; k++) {
+          const tile = tiles[Math.floor(Math.random() * n)] as HTMLElement | undefined
+          if (!tile) continue
+          tile.textContent = pick()
+          tile.classList.add('am-glitch')
+          setTimeout(() => tile.classList.remove('am-glitch'), 220)
+        }
+      }, 140)
+    }
+
     return () => {
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('touchmove', onTouch)
@@ -124,8 +144,9 @@ export function AmharicMatrix({ className }: { className?: string }) {
       window.removeEventListener('resize', buildGrid)
       io.disconnect()
       cancelAnimationFrame(raf)
+      if (flicker) clearInterval(flicker)
     }
-  }, [])
+  }, [auto])
 
   return <div ref={gridRef} className={cn('am-tiles', className)} aria-hidden />
 }

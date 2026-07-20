@@ -185,6 +185,12 @@ html.lenis, html.lenis body { height: auto; }
 .am-glitch {
   animation: am-glitch 0.22s ease;
 }
+/* Faded variant — dark, low-opacity fidäl for use on the orange intro cover. */
+.am-faded .am-tile {
+  opacity: 1;
+  color: rgba(12, 12, 12, calc(0.12 + var(--intensity) * 0.3));
+  text-shadow: none;
+}
 
 /* Ethiopian tibeb weaving band scroll */
 @keyframes tibeb-scroll {
