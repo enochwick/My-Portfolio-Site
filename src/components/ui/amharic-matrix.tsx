@@ -20,16 +20,17 @@ export function AmharicMatrix({ className }: { className?: string }) {
     const grid = gridRef.current
     if (!grid) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    // Skip on phones — it's a mouse-driven decorative grid (no touch interaction),
-    // and ~100 live tiles + the big hero blurs together OOM-crash iOS Safari.
-    if (window.matchMedia('(max-width: 767px)').matches) return
+    // On phones the grid is touch-driven (glow follows a finger, tap glitches a
+    // tile). Use larger tiles there so the live-tile count stays well under the
+    // ~100 that OOM-crashed iOS Safari alongside the big hero blurs.
+    const isPhone = window.matchMedia('(max-width: 767px)').matches
 
     const pick = () => FIDEL[Math.floor(Math.random() * FIDEL.length)]
     let columns = 0
     let rows = 0
 
     const buildGrid = () => {
-      const size = 56
+      const size = isPhone ? 76 : 56
       const w = grid.clientWidth || window.innerWidth
       const h = grid.clientHeight || window.innerHeight
       columns = Math.max(1, Math.floor(w / size))
@@ -81,13 +82,25 @@ export function AmharicMatrix({ className }: { className?: string }) {
       }
     }
 
-    const onMove = (e: MouseEvent) => {
-      mx = e.clientX
-      my = e.clientY
+    const queue = () => {
       if (!queued) {
         queued = true
         raf = requestAnimationFrame(apply)
       }
+    }
+
+    const onMove = (e: MouseEvent) => {
+      mx = e.clientX
+      my = e.clientY
+      queue()
+    }
+
+    const onTouch = (e: TouchEvent) => {
+      const t = e.touches[0]
+      if (!t) return
+      mx = t.clientX
+      my = t.clientY
+      queue()
     }
 
     const io = new IntersectionObserver(
@@ -100,10 +113,14 @@ export function AmharicMatrix({ className }: { className?: string }) {
 
     buildGrid()
     window.addEventListener('mousemove', onMove)
+    window.addEventListener('touchmove', onTouch, { passive: true })
+    window.addEventListener('touchstart', onTouch, { passive: true })
     window.addEventListener('resize', buildGrid)
 
     return () => {
       window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('touchmove', onTouch)
+      window.removeEventListener('touchstart', onTouch)
       window.removeEventListener('resize', buildGrid)
       io.disconnect()
       cancelAnimationFrame(raf)
