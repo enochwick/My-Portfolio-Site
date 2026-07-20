@@ -40,7 +40,7 @@ function Period({ start, end }: { start: [string, string]; end: [string, string]
 
 const DATA: TimelineEntry[] = [
   {
-    title: <Period start={['Feb', '2024']} end={['', 'Now']} />,
+    title: <Period start={['Feb', '2024']} end={['', 'Present']} />,
     content: (
       <Role
         role="Sr. Creative Lead"
