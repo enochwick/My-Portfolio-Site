@@ -9,23 +9,16 @@ const BASE = 1.1 // start as the intro loader begins wiping away
 // warm duotone so the cutout matches the amber theme
 const DUOTONE = 'grayscale(1) sepia(0.34) saturate(1.5) brightness(1.03) contrast(1.08)'
 
-// Letters spread edge-to-edge so every name line fills the same width,
-// regardless of letter count (HENOK and TADESSE end up identical widths).
-function Word({ text, delay }: { text: string; delay: number }) {
+function Word({ children, delay }: { children: React.ReactNode; delay: number }) {
   return (
     <span className="block overflow-hidden">
       <motion.span
-        className="flex w-full justify-between"
-        style={{ letterSpacing: 0 }}
+        className="block"
         initial={{ y: '108%' }}
         animate={{ y: 0 }}
         transition={{ duration: 1, ease: EASE, delay }}
       >
-        {text.split('').map((ch, i) => (
-          <span key={i} className="inline-block">
-            {ch}
-          </span>
-        ))}
+        {children}
       </motion.span>
     </span>
   )
@@ -87,7 +80,7 @@ export function Hero() {
                   style={{ x: henokX, opacity: henokO }}
                   className="jm-display relative z-10 text-center text-[15vw] uppercase leading-[0.82] text-paper md:text-[13vw]"
                 >
-                  <Word text={PERSON.first} delay={BASE + 0.1} />
+                  <Word delay={BASE + 0.1}>{PERSON.first}</Word>
                 </motion.h1>
 
                 {/* photo — woven between the words, fades away with the name */}
@@ -117,7 +110,7 @@ export function Hero() {
                   style={{ x: tadessX, opacity: tadessO }}
                   className="jm-display relative z-30 text-center text-[15vw] uppercase leading-[0.82] text-paper md:text-[13vw]"
                 >
-                  <Word text={PERSON.last} delay={BASE + 0.22} />
+                  <Word delay={BASE + 0.22}>{PERSON.last}</Word>
                 </motion.h1>
 
                 {/* role — assembles in once the name is gone */}
