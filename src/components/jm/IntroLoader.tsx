@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { AmharicMatrix } from '../ui/amharic-matrix'
 
 const EASE = [0.625, 0.05, 0, 1] as const
 
@@ -46,11 +47,14 @@ export function IntroLoader() {
     <AnimatePresence>
       {!done && (
         <motion.div
-          className="fixed inset-0 z-[300] flex items-center justify-center bg-accent px-6 text-ink"
+          className="fixed inset-0 z-[300] flex items-center justify-center overflow-hidden bg-accent px-6 text-ink"
           exit={{ y: '-100%' }}
           transition={{ duration: 0.85, ease: EASE }}
         >
-          <div className="jm-display flex max-w-full items-baseline justify-center text-[13vw] leading-[1.1] tracking-normal sm:text-7xl md:text-8xl">
+          {/* faded, self-animating Amharic fidäl matrix behind the name */}
+          <AmharicMatrix auto className="am-faded z-0 opacity-70 pointer-events-none" />
+
+          <div className="jm-display relative z-10 flex max-w-full items-baseline justify-center text-[13vw] leading-[1.1] tracking-normal sm:text-7xl md:text-8xl">
             <AnimatePresence mode="popLayout">
               {/* He — fades + slides in on mount */}
               <motion.span
