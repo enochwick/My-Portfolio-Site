@@ -45,7 +45,7 @@ export function IntroLoader() {
     <AnimatePresence>
       {!done && (
         <motion.div
-          className="fixed inset-0 z-[300] flex items-center justify-center overflow-hidden bg-accent px-6 text-ink"
+          className="fixed inset-0 z-[300] flex items-center justify-center overflow-hidden bg-ink px-6 text-paper"
           exit={{ y: '-100%' }}
           transition={{ duration: 0.85, ease: EASE }}
         >
@@ -72,7 +72,7 @@ export function IntroLoader() {
                 layout="position"
                 className="inline-block"
                 initial={enter}
-                animate={{ opacity: 1, y: 0, color: swap ? '#E8862D' : '#0C0C0C' }}
+                animate={{ opacity: 1, y: 0, color: swap ? '#E8862D' : '#F3EDE6' }}
                 transition={{
                   duration: 0.6,
                   ease: EASE,
