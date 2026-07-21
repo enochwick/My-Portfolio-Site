@@ -28,7 +28,7 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
 
   return (
     <div ref={ref} className={className}>
-      <div className="jm-display flex items-baseline justify-center leading-[1.1] tracking-normal text-[20vw] md:text-[14vw]">
+      <div className="jm-display flex items-baseline justify-start leading-[1.1] tracking-normal text-[20vw] md:text-[14vw]">
         <AnimatePresence mode="popLayout">
           {inView && (
             <motion.span

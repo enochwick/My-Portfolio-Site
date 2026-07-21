@@ -4,8 +4,21 @@ import { HeynokReveal } from './HeynokReveal'
 
 export function FooterJM() {
   return (
-    <Section theme="paper" className="relative">
-      <div className="mx-auto max-w-[1760px] px-5 pb-10 pt-24 md:px-12 md:pt-32">
+    <Section theme="paper" className="relative overflow-hidden">
+      {/* faded portrait bleeding off the right, sitting way back in the background */}
+      <img
+        src="/images/portrait2.png"
+        alt=""
+        aria-hidden="true"
+        decoding="async"
+        className="pointer-events-none absolute right-0 bottom-0 z-0 h-[80%] w-auto max-w-none select-none object-contain opacity-[0.14] md:h-[115%] md:opacity-[0.16]"
+        style={{
+          filter: 'grayscale(1) sepia(0.34) saturate(1.5) brightness(1.03) contrast(1.08)',
+          WebkitMaskImage: 'linear-gradient(to left, #000 15%, transparent 80%)',
+          maskImage: 'linear-gradient(to left, #000 15%, transparent 80%)',
+        }}
+      />
+      <div className="relative z-10 mx-auto max-w-[1760px] px-5 pb-10 pt-24 md:px-12 md:pt-32">
         <div className="grid grid-cols-2 gap-10 border-b border-paper/15 pb-14 md:flex md:justify-between">
           <div>
             <h3 className="mb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/40">Built with</h3>

@@ -28,31 +28,9 @@ export function Benefits() {
         </div>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-20">
-          {/* portrait + real bio */}
+          {/* real bio */}
           <div>
-            <Reveal>
-              <div className="relative mx-auto w-full max-w-[460px]">
-                <div
-                  className="pointer-events-none absolute inset-x-0 bottom-[12%] top-[8%] -z-10 blur-[70px]"
-                  style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.2), transparent)' }}
-                />
-                <img
-                  src="/images/portrait2.png"
-                  alt="Henok Tadesse"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-auto w-full select-none object-contain"
-                  style={{
-                    // hero's warm duotone so the color reads as the site theme
-                    filter: 'grayscale(1) sepia(0.34) saturate(1.5) brightness(1.03) contrast(1.08)',
-                    // transparent cutout: just fade the bottom into the dark, like the hero
-                    WebkitMaskImage: 'linear-gradient(to bottom, #000 60%, transparent 88%)',
-                    maskImage: 'linear-gradient(to bottom, #000 60%, transparent 88%)',
-                  }}
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={0.05} as="p" className="mt-6 font-sans text-lg leading-relaxed text-paper/85">
+            <Reveal as="p" className="font-sans text-lg leading-relaxed text-paper/85">
               {BIO.lead}
             </Reveal>
             <Reveal delay={0.1} as="p" className="mt-3 font-sans text-base leading-relaxed text-paper/50">
