@@ -15,8 +15,8 @@ const LAYOUT = { duration: 0.5, ease: EASE }
  * Name-intro wordplay (only the H is capital), landing on the brand "Heynok":
  *   phase 0  "Hey 👋"   — He + y fade/slide in with a waving hand
  *   phase 1  "Heynok"   — the 👋 fades + slides down out as "nok" fades + slides
- *                          down in, and the y turns brand orange
- * then the panel wipes up to reveal the site.
+ *                          down in
+ * then the orange panel wipes up to reveal the site.
  */
 export function IntroLoader() {
   const [phase, setPhase] = useState(0)
@@ -45,7 +45,7 @@ export function IntroLoader() {
     <AnimatePresence>
       {!done && (
         <motion.div
-          className="fixed inset-0 z-[300] flex items-center justify-center overflow-hidden bg-ink px-6 text-paper"
+          className="fixed inset-0 z-[300] flex items-center justify-center overflow-hidden bg-accent px-6 text-ink"
           exit={{ y: '-100%' }}
           transition={{ duration: 0.85, ease: EASE }}
         >
@@ -66,20 +66,15 @@ export function IntroLoader() {
                 He
               </motion.span>
 
-              {/* y — stays, and turns brand orange once nok arrives → "Heynok" */}
+              {/* y — stays through to the end → "Heynok". (No orange here: the
+                  panel itself is brand orange, so the y keeps the ink color.) */}
               <motion.span
                 key="y"
                 layout="position"
                 className="inline-block"
                 initial={enter}
-                animate={{ opacity: 1, y: 0, color: swap ? '#E8862D' : '#F3EDE6' }}
-                transition={{
-                  duration: 0.6,
-                  ease: EASE,
-                  delay: 0.2,
-                  layout: LAYOUT,
-                  color: { duration: 0.5, ease: EASE, delay: 0.4 },
-                }}
+                animate={shown}
+                transition={{ duration: 0.6, ease: EASE, delay: 0.2, layout: LAYOUT }}
               >
                 y
               </motion.span>
