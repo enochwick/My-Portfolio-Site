@@ -22,7 +22,7 @@ export function Nav() {
         style={{ color: '#F3EDE6' }}
       >
         {/* mix-blend-difference keeps the nav legible over any section color */}
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-5 md:px-10">
+        <div className="mx-auto flex max-w-[1760px] items-center justify-between px-5 py-5 md:px-12">
           <a href="#top" className="flex items-center gap-2 font-sans text-base font-semibold tracking-tight">
             <span>{PERSON.first}</span>
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />

@@ -5,7 +5,7 @@ import { Reveal } from './Reveal'
 export function FooterJM() {
   return (
     <Section theme="paper" className="relative">
-      <div className="mx-auto max-w-[1400px] px-5 pb-10 pt-24 md:px-10 md:pt-32">
+      <div className="mx-auto max-w-[1760px] px-5 pb-10 pt-24 md:px-12 md:pt-32">
         <div className="grid grid-cols-2 gap-10 border-b border-paper/15 pb-14 md:flex md:justify-between">
           <div>
             <h3 className="mb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/40">Built with</h3>
