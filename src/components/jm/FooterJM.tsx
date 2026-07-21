@@ -1,6 +1,6 @@
 import { PERSON, SOCIALS, MADE_WITH } from './content'
 import { Section } from './theme'
-import { Reveal } from './Reveal'
+import { HeynokReveal } from './HeynokReveal'
 
 export function FooterJM() {
   return (
@@ -35,14 +35,8 @@ export function FooterJM() {
           </div>
         </div>
 
-        {/* giant name */}
-        <Reveal className="py-10">
-          <div className="flex flex-col items-center justify-center gap-3 md:flex-row md:gap-8">
-            <span className="jm-display text-[18vw] uppercase leading-[0.85] md:text-[12vw]">{PERSON.first}</span>
-            <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent md:h-5 md:w-5" />
-            <span className="jm-display text-[18vw] uppercase leading-[0.85] md:text-[12vw]">{PERSON.last}</span>
-          </div>
-        </Reveal>
+        {/* giant name — plays the Hey 👋 → Heynok → Henok wordplay in view */}
+        <HeynokReveal className="py-10" />
 
         <div className="flex flex-col items-center justify-between gap-3 pt-6 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-paper/45 md:flex-row md:text-left">
           <span>{PERSON.role} · 2026</span>
