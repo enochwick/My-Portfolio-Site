@@ -49,7 +49,8 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
               layout="position"
               className="inline-block"
               initial={enter}
-              animate={{ opacity: 1, y: 0, color: swap ? '#E8862D' : '#F3EDE6' }}
+              // once nok arrives the y fades to the muted grey used for "takes time"
+              animate={{ opacity: 1, y: 0, color: swap ? 'rgba(243, 237, 230, 0.4)' : '#F3EDE6' }}
               transition={{
                 duration: 0.6,
                 ease: EASE,
