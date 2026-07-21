@@ -37,15 +37,20 @@ export function Benefits() {
                   style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.2), transparent)' }}
                 />
                 <img
-                  src="/images/portrait.webp"
+                  src="/images/portrait2.webp"
                   alt="Henok Tadesse"
                   loading="lazy"
                   decoding="async"
                   className="h-auto w-full select-none object-contain"
                   style={{
-                    filter: 'grayscale(1) sepia(0.32) saturate(1.35) brightness(1.02) contrast(1.03)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, #000 55%, transparent 82%)',
-                    maskImage: 'linear-gradient(to bottom, #000 55%, transparent 82%)',
+                    // hero's warm duotone so the color reads as the site theme
+                    filter: 'grayscale(1) sepia(0.34) saturate(1.5) brightness(1.03) contrast(1.08)',
+                    // radial fade on every edge (biased down) so the framed photo
+                    // melts into the dark background instead of sitting in a box
+                    WebkitMaskImage:
+                      'radial-gradient(ellipse 84% 96% at 50% 38%, #000 44%, transparent 100%)',
+                    maskImage:
+                      'radial-gradient(ellipse 84% 96% at 50% 38%, #000 44%, transparent 100%)',
                   }}
                 />
               </div>

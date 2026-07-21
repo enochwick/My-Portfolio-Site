@@ -24,7 +24,7 @@ function TimelineRow({
   const y = useTransform(progress, [revealAt - 0.07, revealAt + 0.02], [28, 0])
 
   return (
-    <div className="flex justify-start pt-10 md:gap-10 md:pt-40">
+    <div className="flex justify-start pt-10 md:gap-20 md:pt-40">
       <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
         <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#141009] ring-1 ring-white/10 md:left-3">
           <div className="h-3.5 w-3.5 rounded-full bg-accent shadow-[0_0_12px_rgba(232,134,45,0.7)]" />
@@ -90,7 +90,7 @@ export const Timeline = ({
   return (
     <div className="w-full px-5 font-sans md:px-12" ref={containerRef}>
       {(heading || intro) && (
-        <div className="mx-auto max-w-[1760px] pt-6 pl-20">
+        <div className="mx-auto max-w-[1760px] pl-24 pt-6 md:pl-28">
           {heading && (
             <h2 className="jm-display mb-4 max-w-4xl whitespace-pre-line text-[9vw] leading-[0.95] text-paper md:text-[4.4vw]">
               {heading}
