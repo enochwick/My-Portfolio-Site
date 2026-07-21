@@ -11,7 +11,7 @@ export function FooterJM() {
         alt=""
         aria-hidden="true"
         decoding="async"
-        className="pointer-events-none absolute right-0 bottom-0 z-0 h-[80%] w-auto max-w-none select-none object-contain opacity-[0.24] md:h-[115%] md:opacity-[0.28]"
+        className="pointer-events-none absolute right-0 bottom-0 z-0 h-[70%] w-auto max-w-none select-none object-contain opacity-[0.24] md:h-[96%] md:opacity-[0.28]"
         style={{
           filter: 'grayscale(1) sepia(0.34) saturate(1.5) brightness(1.25) contrast(1.02)',
           WebkitMaskImage: 'linear-gradient(to left, #000 15%, transparent 80%)',
