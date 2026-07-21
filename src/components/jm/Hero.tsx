@@ -61,18 +61,7 @@ export function Hero() {
             style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.4), transparent)' }}
           />
 
-          <div className="relative z-10 mx-auto flex h-[100svh] max-w-[1500px] flex-col px-5 md:px-10">
-            {/* eyebrow */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: BASE }}
-              className="flex items-center justify-between pt-28 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50"
-            >
-              <span>Portfolio · 2026</span>
-              <span>{PERSON.location}</span>
-            </motion.div>
-
+          <div className="relative z-10 mx-auto flex h-[100svh] max-w-[1500px] flex-col px-5 pt-28 md:px-10">
             {/* name + photo intertwine → role swap */}
             <div className="relative flex flex-1 items-center justify-center py-6">
               <div className="relative mx-auto w-full max-w-[1200px]">
