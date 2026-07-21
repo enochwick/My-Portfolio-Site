@@ -15,7 +15,7 @@ export function StatsBand() {
 
   return (
     <Section theme="grey" className="relative overflow-hidden">
-      <div ref={ref} className="relative mx-auto max-w-[1400px] px-5 py-28 md:px-10 md:py-40">
+      <div ref={ref} className="relative mx-auto max-w-[1760px] px-5 py-28 md:px-12 md:py-40">
         {/* floating shapes */}
         <motion.div
           style={{ y: yCircle }}
