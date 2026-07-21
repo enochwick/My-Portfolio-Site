@@ -151,7 +151,7 @@ export function ExperienceSection() {
         data={DATA}
       />
       {/* download résumé */}
-      <div className="mx-auto -mt-6 max-w-7xl px-4 pb-24 md:px-16 lg:px-20">
+      <div className="mx-auto -mt-6 max-w-[1760px] px-5 pb-24 md:px-12">
         <a
           href={RESUME_PDF}
           download

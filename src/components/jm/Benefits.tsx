@@ -10,7 +10,7 @@ export function Benefits() {
   return (
     <Section theme="paper" id="about" className="relative overflow-hidden">
       <SpinningCross className="-right-24 top-10 text-accent/10" size={360} />
-      <div className="relative mx-auto max-w-[1400px] px-5 py-24 md:px-10 md:py-36">
+      <div className="relative mx-auto max-w-[1760px] px-5 py-24 md:px-12 md:py-36">
         {/* big stacked statement */}
         <div className="relative mb-20 md:mb-28">
           <h2 className="jm-display text-[12vw] leading-[0.92] md:text-[7vw]">

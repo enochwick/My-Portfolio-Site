@@ -15,7 +15,7 @@ const CARDS: StackingCardData[] = PROJECTS.map((p) => ({
 export function WorkSection() {
   return (
     <Section theme="dark" id="work" className="relative">
-      <div className="mx-auto max-w-[1400px] px-5 pt-24 md:px-10 md:pt-32">
+      <div className="mx-auto max-w-[1760px] px-5 pt-24 md:px-12 md:pt-32">
         <div className="flex flex-col items-center text-center">
           <Reveal className="font-sans text-lg text-paper/55">Curious?… Take a look at my</Reveal>
           <Reveal delay={0.05}>

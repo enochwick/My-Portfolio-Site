@@ -61,7 +61,7 @@ export function Hero() {
             style={{ background: 'radial-gradient(closest-side, rgba(232,134,45,0.4), transparent)' }}
           />
 
-          <div className="relative z-10 mx-auto flex h-[100svh] max-w-[1500px] flex-col px-5 pt-28 md:px-10">
+          <div className="relative z-10 mx-auto flex h-[100svh] max-w-[1760px] flex-col px-5 pt-28 md:px-12">
             {/* name + photo intertwine → role swap */}
             <div className="relative flex flex-1 items-center justify-center py-6">
               <div className="relative mx-auto w-full max-w-[1200px]">
