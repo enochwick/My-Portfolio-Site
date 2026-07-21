@@ -19,10 +19,9 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
 
   useEffect(() => {
     if (!inView) return
-    const timers = [
-      setTimeout(() => setPhase(1), 1200), // 👋 out, nok in, y turns orange
-    ]
-    return () => timers.forEach(clearTimeout)
+    // Loop forever while in view: toggle between "Hey 👋" and "Heynok".
+    const iv = setInterval(() => setPhase((p) => (p === 0 ? 1 : 0)), 1800)
+    return () => clearInterval(iv)
   }, [inView])
 
   const swap = phase >= 1
