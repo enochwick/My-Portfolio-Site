@@ -124,7 +124,7 @@ export default function AboutSection() {
               Designer. Developer.<br />AI Builder.
             </h3>
             <p className="font-sans font-light text-white/50 text-base sm:text-lg leading-relaxed max-w-xl">
-              With 7+ years across healthcare, ecommerce, and tech, I merge creative
+              With 8+ years across healthcare, ecommerce, and tech, I merge creative
               direction with technical execution. 3D medical illustrations,
               FDA-compliant packaging, RAG-powered AI tools. Each one built with intent.
             </p>

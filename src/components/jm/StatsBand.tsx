@@ -32,7 +32,7 @@ export function StatsBand() {
         />
 
         <h2 className="jm-display relative z-10 max-w-5xl text-[10vw] leading-[0.95] md:text-[5.5vw]">
-          <WordReveal text={"7+ years making brands click and"} />{' '}
+          <WordReveal text={"8+ years making brands click and"} />{' '}
           <span className="text-accent italic">scroll</span>
         </h2>
 

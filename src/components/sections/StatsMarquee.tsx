@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 const stats = [
-  '7+ Years of Experience',
+  '8+ Years of Experience',
   '50+ Successful Projects',
   'Healthcare × Tech × Ecommerce',
   'AI-Forward Creative',

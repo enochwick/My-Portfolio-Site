@@ -88,9 +88,9 @@ export const Timeline = ({
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
 
   return (
-    <div className="w-full px-5 font-sans md:px-12" ref={containerRef}>
+    <div className="w-full px-5 font-sans md:pl-28 md:pr-12" ref={containerRef}>
       {(heading || intro) && (
-        <div className="mx-auto max-w-[1760px] pl-24 pt-6 md:pl-28">
+        <div className="mx-auto max-w-[1760px] pt-6">
           {heading && (
             <h2 className="jm-display mb-4 max-w-4xl whitespace-pre-line text-[9vw] leading-[0.95] text-paper md:text-[4.4vw]">
               {heading}

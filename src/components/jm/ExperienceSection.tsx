@@ -147,11 +147,11 @@ export function ExperienceSection() {
     <Section theme="dark" id="experience" className="relative">
       <Timeline
         heading={'The journey\nso far'}
-        intro="7+ years across healthcare, ecommerce, and tech, crafting surgical guides, 3D renders, brand systems, and AI tools."
+        intro="8+ years across healthcare, ecommerce, and tech, crafting surgical guides, 3D renders, brand systems, and AI tools."
         data={DATA}
       />
       {/* download résumé */}
-      <div className="mx-auto -mt-6 max-w-[1760px] px-5 pb-24 md:px-12">
+      <div className="mx-auto -mt-6 max-w-[1760px] px-5 pb-24 md:pl-28 md:pr-12">
         <a
           href={RESUME_PDF}
           download

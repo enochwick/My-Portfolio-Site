@@ -15,7 +15,7 @@ export const PERSON = {
   heroLine2: 'AI Builder',
   heroBottom:
     'Creative Director  |  AI Enthusiast  |  Vibe Coder  |  Transforming Ideas into Compelling Visuals & Digital Experiences',
-  yearsExp: '7+ years',
+  yearsExp: '8+ years',
 }
 
 // From the portfolio "Meet Henok" intro (verbatim-ish).
@@ -24,7 +24,7 @@ export const BIO = {
   body: "I pull inspiration from a wide range of sources, from prog-rock album covers to 20th-century avant-garde art, and pair that with RAG chatbots, AI assistants, and automation where design meets engineering. If you want to bring an idea to life in a way that is bold, memorable, and genuinely useful, let's build it.",
   // From the resume professional summary.
   summary:
-    'A strong foundation in healthcare marketing and over 7 years crafting impactful work, surgical guides, 3D product renderings, and a diverse range of digital and print design.',
+    'A strong foundation in healthcare marketing and over 8 years crafting impactful work, surgical guides, 3D product renderings, and a diverse range of digital and print design.',
 }
 
 export const SOCIALS = [
@@ -35,7 +35,7 @@ export const SOCIALS = [
 ]
 
 export const STATS = [
-  '7+ Years of Experience',
+  '8+ Years of Experience',
   'Adobe Creative Suite',
   'KeyShot 3D Studio',
   'ZBrush Digital Sculpting',
