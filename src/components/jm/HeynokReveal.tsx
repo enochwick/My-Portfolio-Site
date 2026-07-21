@@ -8,9 +8,9 @@ const leave = { opacity: 0, y: '55%', transition: { duration: 0.5, ease: EASE } 
 const LAYOUT = { duration: 0.5, ease: EASE }
 
 /**
- * The same "Hey 👋 → Heynok" wordplay as the intro, played once when scrolled
- * into view: the 👋 swaps out for "nok" and the y turns brand orange, holding on
- * "Heynok". Maskless, so nothing ever clips.
+ * The same "Hey 👋 → Heynok" wordplay as the intro, but loops continuously while
+ * in view: it swaps between "Hey 👋" and "Heynok" (y turning brand orange) over
+ * and over. Maskless, so nothing ever clips.
  */
 export function HeynokReveal({ className = '' }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
