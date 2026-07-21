@@ -8,8 +8,9 @@ const leave = { opacity: 0, y: '55%', transition: { duration: 0.5, ease: EASE } 
 const LAYOUT = { duration: 0.5, ease: EASE }
 
 /**
- * The same "Hey 👋 → Heynok → Henok" wordplay as the intro, but plays once when
- * scrolled into view and holds on "Henok". Maskless, so nothing ever clips.
+ * The same "Hey 👋 → Heynok" wordplay as the intro, played once when scrolled
+ * into view: the 👋 swaps out for "nok" and the y turns brand orange, holding on
+ * "Heynok". Maskless, so nothing ever clips.
  */
 export function HeynokReveal({ className = '' }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -19,14 +20,12 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
   useEffect(() => {
     if (!inView) return
     const timers = [
-      setTimeout(() => setPhase(1), 1200), // 👋 out, nok in
-      setTimeout(() => setPhase(2), 2300), // y out → Henok
+      setTimeout(() => setPhase(1), 1200), // 👋 out, nok in, y turns orange
     ]
     return () => timers.forEach(clearTimeout)
   }, [inView])
 
   const swap = phase >= 1
-  const yGone = phase >= 2
 
   return (
     <div ref={ref} className={className}>
@@ -45,15 +44,20 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
             </motion.span>
           )}
 
-          {inView && !yGone && (
+          {inView && (
             <motion.span
               key="y"
               layout="position"
               className="inline-block"
               initial={enter}
-              animate={shown}
-              exit={leave}
-              transition={{ duration: 0.6, ease: EASE, delay: 0.2, layout: LAYOUT }}
+              animate={{ opacity: 1, y: 0, color: swap ? '#E8862D' : '#F3EDE6' }}
+              transition={{
+                duration: 0.6,
+                ease: EASE,
+                delay: 0.2,
+                layout: LAYOUT,
+                color: { duration: 0.5, ease: EASE, delay: 0.4 },
+              }}
             >
               y
             </motion.span>

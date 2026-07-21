@@ -12,10 +12,10 @@ const leave = { opacity: 0, y: '55%', transition: { duration: 0.5, ease: EASE } 
 const LAYOUT = { duration: 0.5, ease: EASE }
 
 /**
- * Name-intro wordplay (only the H is capital):
+ * Name-intro wordplay (only the H is capital), landing on the brand "Heynok":
  *   phase 0  "Hey 👋"   — He + y fade/slide in with a waving hand
- *   phase 1  "Heynok"   — the 👋 fades + slides down out as "nok" fades + slides down in
- *   phase 2  "Henok"    — the y fades + slides down out, letters close up
+ *   phase 1  "Heynok"   — the 👋 fades + slides down out as "nok" fades + slides
+ *                          down in, and the y turns brand orange
  * then the panel wipes up to reveal the site.
  */
 export function IntroLoader() {
@@ -29,9 +29,8 @@ export function IntroLoader() {
     }
     document.body.style.overflow = 'hidden'
     const timers = [
-      setTimeout(() => setPhase(1), 1200), // 👋 out, nok in
-      setTimeout(() => setPhase(2), 2300), // y out → Henok
-      setTimeout(() => setDone(true), 3150), // wipe up to the site
+      setTimeout(() => setPhase(1), 1200), // 👋 out, nok in, y turns orange
+      setTimeout(() => setDone(true), 2900), // wipe up to the site
     ]
     return () => timers.forEach(clearTimeout)
   }, [])
@@ -40,8 +39,7 @@ export function IntroLoader() {
     if (done) document.body.style.overflow = ''
   }, [done])
 
-  const swap = phase >= 1 // 👋 leaves, nok arrives
-  const yGone = phase >= 2
+  const swap = phase >= 1 // 👋 leaves, nok arrives, y turns orange
 
   return (
     <AnimatePresence>
@@ -68,20 +66,23 @@ export function IntroLoader() {
                 He
               </motion.span>
 
-              {/* y — present until it fades + slides down out → Henok */}
-              {!yGone && (
-                <motion.span
-                  key="y"
-                  layout="position"
-                  className="inline-block"
-                  initial={enter}
-                  animate={shown}
-                  exit={leave}
-                  transition={{ duration: 0.6, ease: EASE, delay: 0.2, layout: LAYOUT }}
-                >
-                  y
-                </motion.span>
-              )}
+              {/* y — stays, and turns brand orange once nok arrives → "Heynok" */}
+              <motion.span
+                key="y"
+                layout="position"
+                className="inline-block"
+                initial={enter}
+                animate={{ opacity: 1, y: 0, color: swap ? '#E8862D' : '#0C0C0C' }}
+                transition={{
+                  duration: 0.6,
+                  ease: EASE,
+                  delay: 0.2,
+                  layout: LAYOUT,
+                  color: { duration: 0.5, ease: EASE, delay: 0.4 },
+                }}
+              >
+                y
+              </motion.span>
 
               {/* 👋 wave — greets, then fades + slides straight down out.
                   No `layout` here: layout would animate its horizontal recenter
