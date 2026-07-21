@@ -20,8 +20,8 @@ export const PERSON = {
 
 // From the portfolio "Meet Henok" intro (verbatim-ish).
 export const BIO = {
-  lead: "Hi, I'm Henok Tadesse, a multi-disciplinary graphic designer and visual artist who now builds AI-powered products alongside the craft — working across Adobe Creative Suite, KeyShot 3D Studio, and modern AI tools.",
-  body: "I take inspiration from a wide variety of sources, from prog-rock album covers to 20th-century avant-garde art, and pair that eye with RAG chatbots, AI assistants, and intelligent tools where design meets engineering. I'd love to help bring your creative vision to life in a bold, memorable, and future-forward way.",
+  lead: "Hi, I'm Henok Tadesse, a Creative Director and multi-disciplinary designer who builds AI-powered products alongside the craft. I work across brand systems, product, packaging, and 3D visuals, and bring the same eye to intelligent tools that actually ship.",
+  body: "I pull inspiration from a wide range of sources, from prog-rock album covers to 20th-century avant-garde art, and pair that with RAG chatbots, AI assistants, and automation where design meets engineering. If you want to bring an idea to life in a way that is bold, memorable, and genuinely useful, let's build it.",
   // From the resume professional summary.
   summary:
     'A strong foundation in healthcare marketing and over 7 years crafting impactful work, surgical guides, 3D product renderings, and a diverse range of digital and print design.',
