@@ -4,8 +4,8 @@ import { AnimatePresence, motion, useInView } from 'framer-motion'
 const EASE = [0.625, 0.05, 0, 1] as const
 const enter = { opacity: 0, y: '-55%' }
 const shown = { opacity: 1, y: 0 }
-const leave = { opacity: 0, y: '55%', transition: { duration: 0.5, ease: EASE } }
-const LAYOUT = { duration: 0.5, ease: EASE }
+const leave = { opacity: 0, y: '55%', transition: { duration: 0.7, ease: EASE } }
+const LAYOUT = { duration: 0.7, ease: EASE }
 
 /**
  * The same "Hey 👋 → Heynok" wordplay as the intro, but loops continuously while
@@ -20,7 +20,7 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
   useEffect(() => {
     if (!inView) return
     // Loop forever while in view: toggle between "Hey 👋" and "Heynok".
-    const iv = setInterval(() => setPhase((p) => (p === 0 ? 1 : 0)), 1800)
+    const iv = setInterval(() => setPhase((p) => (p === 0 ? 1 : 0)), 2700)
     return () => clearInterval(iv)
   }, [inView])
 
@@ -37,7 +37,7 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
               className="inline-block"
               initial={enter}
               animate={shown}
-              transition={{ duration: 0.6, ease: EASE, delay: 0.1, layout: LAYOUT }}
+              transition={{ duration: 0.85, ease: EASE, delay: 0.15, layout: LAYOUT }}
             >
               He
             </motion.span>
@@ -52,11 +52,11 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
               // once nok arrives the y fades to the muted grey used for "takes time"
               animate={{ opacity: 1, y: 0, color: swap ? 'rgba(243, 237, 230, 0.4)' : '#F3EDE6' }}
               transition={{
-                duration: 0.6,
+                duration: 0.85,
                 ease: EASE,
-                delay: 0.2,
+                delay: 0.25,
                 layout: LAYOUT,
-                color: { duration: 0.5, ease: EASE, delay: 0.4 },
+                color: { duration: 0.6, ease: EASE, delay: 0.55 },
               }}
             >
               y
@@ -66,16 +66,16 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
           {inView && !swap && (
             <motion.span
               key="wave"
-              className="pl-[0.3em] inline-block"
+              className="pl-[0.34em] inline-block text-[0.78em]"
               initial={enter}
               animate={shown}
               exit={leave}
-              transition={{ duration: 0.6, ease: EASE, delay: 0.3 }}
+              transition={{ duration: 0.85, ease: EASE, delay: 0.35 }}
             >
               <motion.span
                 className="inline-block origin-[60%_85%]"
                 animate={{ rotate: [0, 18, -6, 16, -4, 12, 0] }}
-                transition={{ duration: 1, ease: 'easeInOut', delay: 0.6 }}
+                transition={{ duration: 1.3, ease: 'easeInOut', delay: 0.75 }}
               >
                 👋
               </motion.span>
@@ -90,7 +90,7 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
               initial={enter}
               animate={shown}
               exit={leave}
-              transition={{ duration: 0.65, ease: EASE, delay: 0.05, layout: LAYOUT }}
+              transition={{ duration: 0.9, ease: EASE, delay: 0.1, layout: LAYOUT }}
             >
               nok
             </motion.span>
