@@ -45,6 +45,41 @@ export const STATS = [
   'Shopify + Printful',
 ]
 
+// The toolbox: AI + vector stack (from the RAG builds) alongside the design,
+// 3D, web and marketing tools from the portfolio.
+export const TOOLBOX = [
+  {
+    label: 'AI & Vector',
+    tools: [
+      'RAG Architecture',
+      'Supabase pgvector',
+      'Gemini API',
+      'OpenAI',
+      'Claude',
+      'Cursor',
+      'React',
+      'Automation Workflows',
+    ],
+  },
+  {
+    label: 'Design & 3D',
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'InDesign',
+      'Premiere',
+      'Lightroom',
+      'Adobe Dimension',
+      'KeyShot 3D Studio',
+      'ZBrush',
+    ],
+  },
+  {
+    label: 'Web, Commerce & Marketing',
+    tools: ['Shopify', 'Printful', 'Wix', 'Google Analytics', 'Hootsuite'],
+  },
+]
+
 // Services / disciplines, described in Henok's own portfolio language.
 export const SERVICES = [
   {
