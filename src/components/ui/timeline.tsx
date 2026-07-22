@@ -90,7 +90,8 @@ export const Timeline = ({
   return (
     <div className="w-full px-5 font-sans md:pl-28 md:pr-12" ref={containerRef}>
       {(heading || intro) && (
-        <div className="mx-auto max-w-[1760px] pt-6">
+        // pulled back to the left margin while the timeline rows stay indented right
+        <div className="mx-auto max-w-[1760px] pt-6 md:-ml-16">
           {heading && (
             <h2 className="jm-display mb-4 max-w-4xl whitespace-pre-line text-[9vw] leading-[0.95] text-paper md:text-[4.4vw]">
               {heading}
