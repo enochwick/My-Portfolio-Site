@@ -57,7 +57,7 @@ export default function AboutSection() {
   const ctaY       = useTransform(scrollYProgress, [0.82, 0.90], [52, 0])
 
   function copyEmail() {
-    navigator.clipboard.writeText('enochwick@gmail.com')
+    navigator.clipboard.writeText('hello@heynok.com')
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -68,7 +68,7 @@ export default function AboutSection() {
   const socials = [
     { icon: LinkedInIcon, href: 'https://linkedin.com',       label: 'LinkedIn' },
     { icon: YouTubeIcon,  href: 'https://youtube.com',        label: 'YouTube'  },
-    { icon: Mail,         href: 'mailto:enochwick@gmail.com', label: 'Email'    },
+    { icon: Mail,         href: 'mailto:hello@heynok.com', label: 'Email'    },
   ]
 
   return (

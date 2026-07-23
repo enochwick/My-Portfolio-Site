@@ -23,10 +23,10 @@ export default function Footer() {
       <div className="px-6 md:px-10 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
         <span className="font-sans font-light text-sm text-[#999999]">© 2026 Henok Tadesse</span>
         <a
-          href="mailto:enochwick@gmail.com"
+          href="mailto:hello@heynok.com"
           className="font-mono text-sm text-white hover:text-accent transition-colors duration-150"
         >
-          enochwick@gmail.com
+          hello@heynok.com
         </a>
         <span className="font-sans font-light text-sm text-[#999999]">Built with craft and code.</span>
       </div>

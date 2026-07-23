@@ -6,7 +6,7 @@
 export const PERSON = {
   first: 'Henok',
   last: 'Tadesse',
-  email: 'enochwick@gmail.com',
+  email: 'hello@heynok.com',
   phone: '+1 323 961 5519',
   location: 'Dallas, TX',
   role: 'Multi-disciplinary Designer & AI Builder',
@@ -28,7 +28,7 @@ export const BIO = {
 }
 
 export const SOCIALS = [
-  { label: 'Email', short: '@', href: 'mailto:enochwick@gmail.com' },
+  { label: 'Email', short: '@', href: 'mailto:hello@heynok.com' },
   { label: 'LinkedIn', short: 'in', href: 'https://linkedin.com' },
   { label: 'Behance', short: 'Be', href: 'https://behance.net' },
   { label: 'YouTube', short: 'Yt', href: 'https://youtube.com' },

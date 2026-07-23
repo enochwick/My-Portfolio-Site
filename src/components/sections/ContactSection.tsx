@@ -43,17 +43,17 @@ export default function ContactSection() {
             If the work above fits what you need, send me a note. Share the goal, a link, budget range, and when you want to start. I'll reply with the next step.
           </p>
           <a
-            href="mailto:enochwick@gmail.com"
+            href="mailto:hello@heynok.com"
             className="font-mono text-dark text-lg hover:text-accent transition-colors duration-150 block mb-2"
           >
-            enochwick@gmail.com
+            hello@heynok.com
           </a>
           <p className="font-sans text-[#999999] mb-6">Flower Mound, TX</p>
           <div className="flex gap-4">
             {[
               { icon: LinkedInIcon, href: 'https://linkedin.com', label: 'LinkedIn' },
               { icon: YouTubeIcon, href: 'https://youtube.com', label: 'YouTube' },
-              { icon: Mail, href: 'mailto:enochwick@gmail.com', label: 'Email' },
+              { icon: Mail, href: 'mailto:hello@heynok.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
