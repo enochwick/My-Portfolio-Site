@@ -66,6 +66,28 @@ export function Hero() {
             {/* name + photo intertwine → role swap */}
             <div className="relative flex flex-1 items-center justify-center py-6">
               <div className="relative mx-auto w-full max-w-[1200px]">
+                {/* rotating Ethiopian motif — bottom layer, behind the name and the
+                    photo; tracks the photo's position and fades/scales with it */}
+                <motion.div
+                  style={{ opacity: photoO, scale: photoS }}
+                  className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
+                >
+                  {/* zero-width stand-in matching the photo's height + lift, so the
+                      pattern centers exactly where the portrait renders */}
+                  <div className="relative h-[48vh] -translate-y-[3%] md:h-[64vh]">
+                    <div className="absolute left-1/2 top-1/2 aspect-square h-[115%] -translate-x-1/2 -translate-y-1/2">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.85 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.2, ease: EASE, delay: BASE + 0.5 }}
+                        className="absolute inset-0"
+                      >
+                        <EthioPattern className="absolute inset-0" />
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+
                 {/* HENOK — behind the photo, slides right + fades */}
                 <motion.h1
                   style={{ x: henokX, opacity: henokO }}
@@ -79,21 +101,7 @@ export function Hero() {
                   style={{ opacity: photoO, scale: photoS }}
                   className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
                 >
-                  {/* portrait + rotating Ethiopian motif locked together —
-                      both fade/scale away with the photo wrapper on scroll */}
                   <div className="relative -translate-y-[3%]">
-                    {/* centering lives on the plain wrapper — the motion child only
-                        fades/scales, so framer's transform can't clobber the translate */}
-                    <div className="absolute left-1/2 top-1/2 aspect-square h-[115%] -translate-x-1/2 -translate-y-1/2">
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.85 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1.2, ease: EASE, delay: BASE + 0.5 }}
-                        className="absolute inset-0"
-                      >
-                        <EthioPattern className="absolute inset-0" />
-                      </motion.div>
-                    </div>
                     <motion.img
                       src="/images/portrait.webp"
                       alt={`${PERSON.first} ${PERSON.last}`}
