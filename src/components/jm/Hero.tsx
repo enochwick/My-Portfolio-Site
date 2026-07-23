@@ -79,31 +79,33 @@ export function Hero() {
                   style={{ opacity: photoO, scale: photoS }}
                   className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
                 >
-                  {/* animated Ethiopian motif rotating behind the portrait —
-                      fades/scales away with the photo on scroll */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.85 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.2, ease: EASE, delay: BASE + 0.5 }}
-                    className="absolute left-1/2 top-[47%] aspect-square h-[52vh] -translate-x-1/2 -translate-y-1/2 md:h-[70vh]"
-                  >
-                    <EthioPattern className="absolute inset-0" />
-                  </motion.div>
-                  <motion.img
-                    src="/images/portrait.webp"
-                    alt={`${PERSON.first} ${PERSON.last}`}
-                    initial={{ opacity: 0, y: 28 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.1, ease: EASE, delay: BASE + 0.35 }}
-                    fetchPriority="high"
-                    decoding="async"
-                    className="h-[48vh] w-auto max-w-none -translate-y-[3%] select-none object-contain md:h-[64vh]"
-                    style={{
-                      filter: DUOTONE,
-                      WebkitMaskImage: 'linear-gradient(to bottom, #000 58%, transparent 84%)',
-                      maskImage: 'linear-gradient(to bottom, #000 58%, transparent 84%)',
-                    }}
-                  />
+                  {/* portrait + rotating Ethiopian motif locked together —
+                      both fade/scale away with the photo wrapper on scroll */}
+                  <div className="relative -translate-y-[3%]">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 1.2, ease: EASE, delay: BASE + 0.5 }}
+                      className="absolute left-1/2 top-1/2 aspect-square h-[115%] -translate-x-1/2 -translate-y-1/2"
+                    >
+                      <EthioPattern className="absolute inset-0" />
+                    </motion.div>
+                    <motion.img
+                      src="/images/portrait.webp"
+                      alt={`${PERSON.first} ${PERSON.last}`}
+                      initial={{ opacity: 0, y: 28 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1.1, ease: EASE, delay: BASE + 0.35 }}
+                      fetchPriority="high"
+                      decoding="async"
+                      className="relative h-[48vh] w-auto max-w-none select-none object-contain md:h-[64vh]"
+                      style={{
+                        filter: DUOTONE,
+                        WebkitMaskImage: 'linear-gradient(to bottom, #000 58%, transparent 84%)',
+                        maskImage: 'linear-gradient(to bottom, #000 58%, transparent 84%)',
+                      }}
+                    />
+                  </div>
                 </motion.div>
 
                 {/* TADESSE — in front of the photo, slides left + fades */}
