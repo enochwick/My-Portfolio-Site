@@ -82,14 +82,18 @@ export function Hero() {
                   {/* portrait + rotating Ethiopian motif locked together —
                       both fade/scale away with the photo wrapper on scroll */}
                   <div className="relative -translate-y-[3%]">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.85 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 1.2, ease: EASE, delay: BASE + 0.5 }}
-                      className="absolute left-1/2 top-1/2 aspect-square h-[115%] -translate-x-1/2 -translate-y-1/2"
-                    >
-                      <EthioPattern className="absolute inset-0" />
-                    </motion.div>
+                    {/* centering lives on the plain wrapper — the motion child only
+                        fades/scales, so framer's transform can't clobber the translate */}
+                    <div className="absolute left-1/2 top-1/2 aspect-square h-[115%] -translate-x-1/2 -translate-y-1/2">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.85 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.2, ease: EASE, delay: BASE + 0.5 }}
+                        className="absolute inset-0"
+                      >
+                        <EthioPattern className="absolute inset-0" />
+                      </motion.div>
+                    </div>
                     <motion.img
                       src="/images/portrait.webp"
                       alt={`${PERSON.first} ${PERSON.last}`}
