@@ -40,6 +40,10 @@ export function Hero() {
   const photoS = useTransform(scrollY, [vh * 0.05, vh * 0.3], [1, 0.9])
   const captionO = useTransform(scrollY, [0, vh * 0.2], [1, 0])
 
+  // Ethiopian motif — faded, and unlike the photo it lingers behind the role
+  // ("Designer / AI Builder") and only fades once you scroll past it.
+  const patternO = useTransform(scrollY, [0, vh * 0.52, vh * 0.62], [0.5, 0.5, 0])
+
   // Phase 2 — the role assembles in from both sides once the name is gone,
   // finishing early (~0.5vh) so it holds fully-formed for the rest of the pin.
   const desX = useTransform(scrollY, [vh * 0.32, vh * 0.5], [-SLIDE * 0.8, 0])
@@ -67,9 +71,10 @@ export function Hero() {
             <div className="relative flex flex-1 items-center justify-center py-6">
               <div className="relative mx-auto w-full max-w-[1200px]">
                 {/* rotating Ethiopian motif — bottom layer, behind the name and the
-                    photo; tracks the photo's position and fades/scales with it */}
+                    photo. Faded, and it lingers behind the role text; only its
+                    OPACITY is scroll-linked, so the rotation never freezes. */}
                 <motion.div
-                  style={{ opacity: photoO, scale: photoS }}
+                  style={{ opacity: patternO }}
                   className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
                 >
                   {/* zero-width stand-in matching the photo's height + lift, so the
