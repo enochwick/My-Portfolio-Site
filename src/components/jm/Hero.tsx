@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { PERSON } from './content'
 import { Section } from './theme'
 import { AmharicMatrix } from '../ui/amharic-matrix'
+import { EthioPattern } from './EthioPattern'
 
 const EASE = [0.625, 0.05, 0, 1] as const
 const BASE = 1.1 // start as the intro loader begins wiping away
@@ -78,6 +79,16 @@ export function Hero() {
                   style={{ opacity: photoO, scale: photoS }}
                   className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
                 >
+                  {/* animated Ethiopian motif rotating behind the portrait —
+                      fades/scales away with the photo on scroll */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1.2, ease: EASE, delay: BASE + 0.5 }}
+                    className="absolute left-1/2 top-[42%] aspect-square h-[42vh] -translate-x-1/2 -translate-y-1/2 md:h-[58vh]"
+                  >
+                    <EthioPattern className="absolute inset-0" />
+                  </motion.div>
                   <motion.img
                     src="/images/portrait.webp"
                     alt={`${PERSON.first} ${PERSON.last}`}
