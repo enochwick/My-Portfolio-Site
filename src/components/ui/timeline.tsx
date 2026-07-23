@@ -88,10 +88,10 @@ export const Timeline = ({
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
 
   return (
-    <div className="w-full px-5 font-sans md:pl-28 md:pr-12" ref={containerRef}>
+    <div className="w-full font-sans" ref={containerRef}>
       {(heading || intro) && (
-        // pulled back to the left margin while the timeline rows stay indented right
-        <div className="mx-auto max-w-[1760px] pt-6 md:-ml-16">
+        // same container as the sections above so the heading lines up with theirs
+        <div className="mx-auto max-w-[1760px] px-5 pt-6 md:px-12">
           {heading && (
             <h2 className="jm-display mb-4 max-w-4xl whitespace-pre-line text-[9vw] leading-[0.95] text-paper md:text-[4.4vw]">
               {heading}
@@ -101,7 +101,8 @@ export const Timeline = ({
         </div>
       )}
 
-      <div ref={ref} className="relative mx-auto max-w-[1760px] pb-20">
+      <div className="px-5 md:pl-28 md:pr-12">
+        <div ref={ref} className="relative mx-auto max-w-[1760px] pb-20">
         {data.map((item, index) => (
           <TimelineRow
             key={index}
@@ -111,14 +112,15 @@ export const Timeline = ({
           />
         ))}
 
-        <div
-          style={{ height: height + 'px' }}
-          className="absolute left-8 top-0 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-white/15 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8"
-        >
-          <motion.div
-            style={{ height: heightTransform, opacity: opacityTransform }}
-            className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-accent from-[0%] via-accent/50 via-[10%] to-transparent"
-          />
+          <div
+            style={{ height: height + 'px' }}
+            className="absolute left-8 top-0 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-white/15 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8"
+          >
+            <motion.div
+              style={{ height: heightTransform, opacity: opacityTransform }}
+              className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-accent from-[0%] via-accent/50 via-[10%] to-transparent"
+            />
+          </div>
         </div>
       </div>
     </div>

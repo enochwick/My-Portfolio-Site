@@ -9,8 +9,8 @@ const LAYOUT = { duration: 0.7, ease: EASE }
 
 /**
  * The same "Hey 👋 → Heynok" wordplay as the intro, but loops continuously while
- * in view: it swaps between "Hey 👋" and "Heynok" (y turning brand orange) over
- * and over. Maskless, so nothing ever clips.
+ * in view: it swaps between "Hey 👋" and "Heynok" over and over.
+ * Maskless, so nothing ever clips.
  */
 export function HeynokReveal({ className = '' }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -49,15 +49,8 @@ export function HeynokReveal({ className = '' }: { className?: string }) {
               layout="position"
               className="inline-block"
               initial={enter}
-              // once nok arrives the y fades to the muted grey used for "takes time"
-              animate={{ opacity: 1, y: 0, color: swap ? 'rgba(243, 237, 230, 0.4)' : '#F3EDE6' }}
-              transition={{
-                duration: 0.85,
-                ease: EASE,
-                delay: 0.25,
-                layout: LAYOUT,
-                color: { duration: 0.6, ease: EASE, delay: 0.55 },
-              }}
+              animate={shown}
+              transition={{ duration: 0.85, ease: EASE, delay: 0.25, layout: LAYOUT }}
             >
               y
             </motion.span>

@@ -5,18 +5,13 @@ import { HeynokReveal } from './HeynokReveal'
 export function FooterJM() {
   return (
     <Section theme="paper" className="relative overflow-hidden">
-      {/* faded portrait bleeding off the right, sitting way back in the background */}
+      {/* portrait anchored to the right, sitting behind the footer content */}
       <img
         src="/images/portrait2.png"
         alt=""
         aria-hidden="true"
         decoding="async"
-        className="pointer-events-none absolute right-0 top-1/2 z-0 h-[58%] w-auto max-w-none -translate-y-1/2 select-none object-contain opacity-[0.24] md:h-[80%] md:opacity-[0.28]"
-        style={{
-          filter: 'grayscale(1) sepia(0.34) saturate(1.5) brightness(1.25) contrast(1.02)',
-          WebkitMaskImage: 'linear-gradient(to left, #000 15%, transparent 80%)',
-          maskImage: 'linear-gradient(to left, #000 15%, transparent 80%)',
-        }}
+        className="pointer-events-none absolute right-0 top-1/2 z-0 h-[58%] w-auto max-w-none -translate-y-1/2 select-none object-contain md:h-[80%]"
       />
       <div className="relative z-10 mx-auto max-w-[1760px] px-5 pb-10 pt-24 md:px-12 md:pt-32">
         <div className="grid grid-cols-2 gap-10 border-b border-paper/15 pb-14 md:flex md:justify-between">
