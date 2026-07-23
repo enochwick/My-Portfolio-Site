@@ -85,7 +85,7 @@ export function Hero() {
                     initial={{ opacity: 0, scale: 0.85 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, ease: EASE, delay: BASE + 0.5 }}
-                    className="absolute left-1/2 top-[42%] aspect-square h-[42vh] -translate-x-1/2 -translate-y-1/2 md:h-[58vh]"
+                    className="absolute left-1/2 top-[47%] aspect-square h-[52vh] -translate-x-1/2 -translate-y-1/2 md:h-[70vh]"
                   >
                     <EthioPattern className="absolute inset-0" />
                   </motion.div>
